@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import ThemeProviders from './themeProviders'
 import Toast from '@/components/common/toast'
