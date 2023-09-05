@@ -8,6 +8,27 @@ import * as tokens from '@design/tokens'
 
 import { defaultVars } from './vars.css'
 
+const COLORS = {
+  primary: '#734EF7',
+  primarySub: '#EAE4FE',
+  secondary: '#FF8038',
+  black: '#000000',
+  white: '#FFFFFF',
+  // grayScale: {
+  //   w700: '#212529',
+  //   w600: '#343A40',
+  //   w500: '#6C757D',
+  //   w400: '#A2AAB2',
+  //   w300: '#C7CDD2',
+  //   w200: '#DEE2E6',
+  //   w100: '#E9ECEF',
+  //   w50: '#F0F2F4',
+  //   w0: '#F8F9FA',
+  // },
+}
+
+type Colors = typeof COLORS
+
 /**
  * Specialized DeepPartial that enables extending the base theme.
  */
@@ -26,11 +47,10 @@ type DeepRequired<T> = {
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type Theme = {
   breakpoints: typeof tokens.breakpoints
-  color: {
+  colors: {
     scheme: 'light' | 'dark'
-    primary: string
-    placeholder2: string
-  }
+  } & Colors
+  backgroundColors: Colors
   spacing: typeof tokens.spacing
   fontFamily: string
   typography: typeof tokens.typography
@@ -40,10 +60,21 @@ type ThemeOptions = DeepPartial<Theme>
 
 export const defaultTheme: Theme = {
   breakpoints: tokens.breakpoints,
-  color: {
+  colors: {
     scheme: 'light',
-    primary: '#008060',
-    placeholder2: '#BFCC94',
+    primary: COLORS.primary,
+    primarySub: COLORS.primarySub,
+    secondary: COLORS.secondary,
+    black: COLORS.black,
+    white: COLORS.white,
+    // grayScale: COLORS.grayScale,
+  },
+  backgroundColors: {
+    primary: COLORS.primary,
+    primarySub: COLORS.primarySub,
+    secondary: COLORS.secondary,
+    black: COLORS.black,
+    white: COLORS.white,
   },
   spacing: tokens.spacing,
   fontFamily:

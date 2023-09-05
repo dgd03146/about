@@ -30,6 +30,13 @@ const sizes = {
   full: '100%',
 }
 
+export const colorStyles = defineProperties({
+  properties: {
+    color: defaultVars.colors,
+    backgroundColor: defaultVars.backgroundColors,
+  },
+})
+
 export const unresponsiveStyles = defineProperties({
   properties: {
     borderStyle: [
@@ -175,6 +182,10 @@ export const responsiveStyles = defineProperties({
   },
 })
 
-export const sprinkles = createSprinkles(unresponsiveStyles, responsiveStyles)
+export const sprinkles = createSprinkles(
+  unresponsiveStyles,
+  responsiveStyles,
+  colorStyles,
+)
 
 export type Sprinkles = Parameters<typeof sprinkles>[0]
