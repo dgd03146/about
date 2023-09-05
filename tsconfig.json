@@ -20,7 +20,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@design/atoms": ["./src/design/atoms/index.ts"],
+      "@design/components": ["./src/design/components/index.ts"],
+      "@design/tokens": ["./src/design/tokens/index.ts"]
     }
   },
   "include": [
