@@ -1,7 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
-
-import { breakpoints } from '@design/tokens'
 import { defaultVars } from '@design/theme'
+import { breakpoints } from '@design/tokens'
+
 // using values from tokens due to CSS scoping issue when using `vars`
 
 const flexAlignment = ['flex-start', 'center', 'flex-end', 'stretch'] as const
@@ -30,6 +30,13 @@ const sizes = {
   '5/6': '83.333333%',
   full: '100%',
 }
+
+export const colorStyles = defineProperties({
+  properties: {
+    color: defaultVars.colors,
+    backgroundColor: defaultVars.backgroundColors,
+  },
+})
 
 export const unresponsiveStyles = defineProperties({
   properties: {
@@ -176,6 +183,10 @@ export const responsiveStyles = defineProperties({
   },
 })
 
-export const sprinkles = createSprinkles(unresponsiveStyles, responsiveStyles)
+export const sprinkles = createSprinkles(
+  unresponsiveStyles,
+  responsiveStyles,
+  colorStyles,
+)
 
 export type Sprinkles = Parameters<typeof sprinkles>[0]
