@@ -4,7 +4,6 @@ about: Refactor code for this project
 title: "\U0001F528"
 labels: "\U0001F528 Refactor"
 assignees: dgd03146
-
 ---
 
 **Is your feature request related to a problem? Please describe.**

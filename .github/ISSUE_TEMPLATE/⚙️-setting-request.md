@@ -1,10 +1,9 @@
 ---
-name: "⚙️ Setting request"
+name: '⚙️ Setting request'
 about: Set up for this project
-title: "⚙️"
-labels: "⚙ Setting"
+title: '⚙️'
+labels: '⚙ Setting'
 assignees: dgd03146
-
 ---
 
 **Is your feature request related to a problem? Please describe.**

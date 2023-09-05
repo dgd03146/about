@@ -1,7 +1,7 @@
+import { defaultVars } from '@design/theme'
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 import { breakpoints } from '@design/tokens'
 // using values from tokens due to CSS scoping issue when using `vars`
-import { defaultVars } from '../theme/vars.css'
 
 const flexAlignment = ['flex-start', 'center', 'flex-end', 'stretch'] as const
 
