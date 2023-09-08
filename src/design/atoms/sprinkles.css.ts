@@ -120,6 +120,7 @@ export const responsiveStyles = defineProperties({
       'flow-root',
       'contents',
     ],
+
     flex: {
       1: '1 1 0%',
       auto: '1 1 auto',
