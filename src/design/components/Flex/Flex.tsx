@@ -1,24 +1,19 @@
-import type * as Polymorphic from '@radix-ui/react-polymorphic'
-import React from 'react'
+import type { ReactNode } from 'react'
+import { forwardRef } from 'react'
 
-import { Atoms } from '../../atoms'
 import { Box, BoxProps } from '../Box'
+import { Sprinkles } from '@/design/sprinkles.css'
 
-interface Props {
-  direction?: Atoms['flexDirection']
-  grow?: Atoms['flexGrow']
-  shrink?: Atoms['flexShrink']
-  wrap?: Atoms['flexWrap']
+interface FlexProps extends BoxProps {
+  direction?: Sprinkles['flexDirection']
+  grow?: Sprinkles['flexGrow']
+  shrink?: Sprinkles['flexShrink']
+  wrap?: Sprinkles['flexWrap']
 }
 
-type PolymorphicFlex = Polymorphic.ForwardRefComponent<
-  Polymorphic.IntrinsicElement<typeof Box>,
-  Omit<BoxProps, 'wrap' | 'placeContent'> & Props
->
+type FlexComponent = (props: FlexProps) => ReactNode | null
 
-export type FlexProps = Polymorphic.OwnProps<PolymorphicFlex>
-
-export const Flex = React.forwardRef((props, ref) => {
+export const Flex: FlexComponent = forwardRef((props, ref) => {
   const { direction, grow, shrink, wrap, ...restProps } = props
 
   return (
@@ -32,6 +27,4 @@ export const Flex = React.forwardRef((props, ref) => {
       {...restProps}
     />
   )
-}) as PolymorphicFlex
-
-Flex.displayName = 'Flex'
+})

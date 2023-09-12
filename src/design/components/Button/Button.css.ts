@@ -1,24 +1,24 @@
 import { style } from '@vanilla-extract/css'
 
-import { defaultVars } from '../../theme/vars.css'
+import { themeVars } from '@/design/theme'
 
 export const root = style({
-  backgroundColor: defaultVars.colors.primary,
-  borderRadius: defaultVars.spacing[100],
-  paddingTop: defaultVars.spacing[200],
-  paddingBottom: defaultVars.spacing[200],
-  paddingLeft: defaultVars.spacing[400],
+  backgroundColor: themeVars.colors.primary,
+  borderRadius: themeVars.spacing[100],
+  paddingTop: themeVars.spacing[200],
+  paddingBottom: themeVars.spacing[200],
+  paddingLeft: themeVars.spacing[400],
   paddingRight: defaultVars.spacing[400],
   color: '#ffffff',
   fontWeight: 400,
-  fontSize: defaultVars.typography.fontsize.body,
-  lineHeight: defaultVars.spacing[500],
-  fontFamily: defaultVars.fontFamily,
+  fontSize: themeVars.fontSize.body,
+  lineHeight: themeVars.spacing[500],
+  fontFamily: themeVars.fontFamily,
   ':hover': {
-    backgroundColor: '#006e52',
+    backgroundColor: themeVars.backgroundColors.primary,
   },
   ':active': {
-    backgroundColor: '#005e46',
+    backgroundColor: themeVars.backgroundColors.primarySub,
     boxShadow: '0 1px 0 rgba(0,0,0,0.5), 0 -1px 0 rgba(0,0,0,0.2)',
   },
   ':focus': {
