@@ -1,17 +1,18 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
-import { defaultVars } from '@design/theme'
+
 import { breakpoints } from '@design/tokens'
+import { themeVars } from './theme/createTheme'
 
 // using values from tokens due to CSS scoping issue when using `vars`
 
 const flexAlignment = ['flex-start', 'center', 'flex-end', 'stretch'] as const
 
 const spacing = {
-  ...defaultVars.spacing,
+  ...themeVars.spacing,
   auto: 'auto',
 }
 
-const sizes = {
+const size = {
   ...spacing,
   '1/2': '50%',
   '1/3': '33.333333%',
@@ -30,13 +31,6 @@ const sizes = {
   '5/6': '83.333333%',
   full: '100%',
 }
-
-export const colorStyles = defineProperties({
-  properties: {
-    color: defaultVars.colors,
-    backgroundColor: defaultVars.backgroundColors,
-  },
-})
 
 export const unresponsiveStyles = defineProperties({
   properties: {
@@ -93,6 +87,20 @@ export const unresponsiveStyles = defineProperties({
   },
 })
 
+export const colorStyles = defineProperties({
+  properties: {
+    colors: themeVars.colors,
+    background: themeVars.backgroundColors,
+  },
+})
+
+export const fontStyles = defineProperties({
+  properties: {
+    fontSize: themeVars.fontSize,
+    fontWeight: themeVars.fontWeight,
+  },
+})
+
 export const responsiveStyles = defineProperties({
   conditions: {
     xs: {},
@@ -103,10 +111,10 @@ export const responsiveStyles = defineProperties({
   },
   defaultCondition: 'xs',
   properties: {
-    top: sizes,
-    right: sizes,
-    bottom: sizes,
-    left: sizes,
+    top: size,
+    right: size,
+    bottom: size,
+    left: size,
     alignItems: [...flexAlignment, 'baseline'],
     alignSelf: [...flexAlignment, 'baseline'],
     display: [
@@ -132,9 +140,9 @@ export const responsiveStyles = defineProperties({
     flexShrink: [0, 1],
     flexWrap: ['wrap', 'nowrap', 'wrap-reverse'],
     // don't include "auto" for gap
-    gap: defaultVars.spacing,
+    gap: themeVars.spacing,
 
-    height: { ...sizes },
+    height: { ...size },
     justifyContent: [
       ...flexAlignment,
       'space-around',
@@ -146,9 +154,9 @@ export const responsiveStyles = defineProperties({
     marginLeft: spacing,
     marginRight: spacing,
     marginTop: spacing,
-    maxHeight: { ...sizes, 0: '0px', full: '100%' },
+    maxHeight: { ...size, 0: '0px', full: '100%' },
     maxWidth: {
-      ...sizes,
+      ...size,
       ...breakpoints,
       0: '0px',
       none: 'none',
@@ -171,7 +179,7 @@ export const responsiveStyles = defineProperties({
     placeContent: ['center'],
     position: ['absolute', 'relative', 'static', 'fixed', 'sticky', 'initial'],
     textAlign: ['left', 'center', 'right'],
-    width: sizes,
+    width: size,
   },
   shorthands: {
     margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],

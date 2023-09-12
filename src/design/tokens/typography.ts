@@ -1,5 +1,5 @@
 export const typography = {
-  fontsize: {
+  fontSize: {
     'heading-1': '2rem',
     'heading-2': '1.75rem',
     'heading-3': '1.5rem',
@@ -12,4 +12,11 @@ export const typography = {
     'body-small': '.75rem',
     caption: '.75rem',
   },
+  fontWeight: {
+    light: '300',
+    semibold: '500',
+    bold: '700',
+  },
+  fontFamily:
+    'ShopifySans,-apple-system,BlinkMacSystemFont,San Francisco,Segoe UI,Roboto,Helvetica Neue,sans-serif',
 }
