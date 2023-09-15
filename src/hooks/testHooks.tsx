@@ -7,7 +7,7 @@ function TestHook() {
   return (
     <div>
       <button type="button" onClick={() => setTestBool(!testBool)}>
-        Change State
+        Change State, TEST HOOK
       </button>
       <p>Boolean State: {testBool ? 'true' : 'false'}</p>
     </div>

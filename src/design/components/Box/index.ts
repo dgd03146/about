@@ -1,2 +1,2 @@
-export { Box } from './Boxx'
-export type { BoxProps } from './Boxx'
+export { Box } from './Box'
+// // export type { BoxProps } from './Box'

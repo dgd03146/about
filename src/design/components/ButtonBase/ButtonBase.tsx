@@ -1,44 +1,55 @@
-import type * as Polymorphic from '@radix-ui/react-polymorphic'
-import React from 'react'
-import clsx from 'clsx'
+// import React, { ElementType } from 'react'
+// import clsx from 'clsx'
 
-import * as styles from './ButtonBase.css'
+// import * as styles from './ButtonBase.css'
+// import { PolymorphicComponentPropWithRef } from '@/design/types/Polymorphic'
 
-interface Props {
-  children?: React.ReactNode
-  href?: string
-  type?: 'button' | 'submit' | 'reset'
-  disabled?: boolean
-}
+// export type ButtonProps<C extends ElementType> =
+//   PolymorphicComponentPropWithRef<
+//     C,
+//     {
+//       children?: React.ReactNode
+//       href?: string
+//       type?: 'button' | 'submit' | 'reset'
+//       disabled?: boolean
+//     }
+//   >
 
-type PolymorphicButtonBase = Polymorphic.ForwardRefComponent<'button', Props>
+// export type ButtonBaseProps<C extends ElementType> =
+//   PolymorphicComponentPropWithRef<C>
 
-export type ButtonBaseProps = Polymorphic.OwnProps<PolymorphicButtonBase>
+// // type PolymorphicButtonBase = Polymorphic.ForwardRefComponent<'button', Props>
 
-export const ButtonBase = React.forwardRef((props, ref) => {
-  const {
-    className = '',
-    as: asProp = 'button',
-    disabled = false,
-    type = 'button',
-    ...restProps
-  } = props
+// // export type ButtonBaseProps = Polymorphic.OwnProps<PolymorphicButtonBase>
 
-  const Component = (restProps.href ? 'a' : asProp) as 'button'
+// type ButtonBaseComponent = <C extends ElementType = 'button'>(
+//   props: ButtonProps<C>,
+// ) => ReactNode | null
 
-  return (
-    <Component
-      ref={ref}
-      type={type}
-      className={clsx(
-        styles.root,
-        {
-          [styles.disabled]: disabled,
-        },
-        className,
-      )}
-      {...restProps}
-    />
-    // className={`${styles.root} ${disabled ? styles.disabled : ''} ${className || ''}`}
-  )
-}) as PolymorphicButtonBase
+// export const ButtonBase = React.forwardRef((props, ref) => {
+//   const {
+//     className = '',
+//     as: asProp = 'button',
+//     disabled = false,
+//     type = 'button',
+//     ...restProps
+//   } = props
+
+//   const Component = (restProps.href ? 'a' : asProp) as 'button'
+
+//   return (
+//     <Component
+//       ref={ref}
+//       type={type}
+//       className={clsx(
+//         styles.root,
+//         {
+//           [styles.disabled]: disabled,
+//         },
+//         className,
+//       )}
+//       {...restProps}
+//     />
+//     // className={`${styles.root} ${disabled ? styles.disabled : ''} ${className || ''}`}
+//   )
+// }) as PolymorphicButtonBase

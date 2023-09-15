@@ -1,30 +1,33 @@
-import type { ReactNode } from 'react'
-import { forwardRef } from 'react'
+// import type { ReactNode } from 'react'
+// import { forwardRef } from 'react'
 
-import { Box, BoxProps } from '../Box'
-import { Sprinkles } from '@/design/sprinkles.css'
+// import { Box } from '../Box'
+// import { Sprinkles } from '@/design/components/sprinkles.css'
+// import { PolymorphicComponentPropWithRef } from '@/design/types/Polymorphic'
 
-interface FlexProps extends BoxProps {
-  direction?: Sprinkles['flexDirection']
-  grow?: Sprinkles['flexGrow']
-  shrink?: Sprinkles['flexShrink']
-  wrap?: Sprinkles['flexWrap']
-}
+// interface Props {
+//   direction?: Sprinkles['flexDirection']
+//   grow?: Sprinkles['flexGrow']
+//   shrink?: Sprinkles['flexShrink']
+//   wrap?: Sprinkles['flexWrap']
+// }
 
-type FlexComponent = (props: FlexProps) => ReactNode | null
+// type FlexProps = PolymorphicComponentPropWithRef<typeof Box, Props>
 
-export const Flex: FlexComponent = forwardRef((props, ref) => {
-  const { direction, grow, shrink, wrap, ...restProps } = props
+// type FlexComponent = (props: FlexProps) => ReactNode | null
 
-  return (
-    <Box
-      ref={ref}
-      display="flex"
-      flexDirection={direction}
-      flexGrow={grow}
-      flexShrink={shrink}
-      flexWrap={wrap}
-      {...restProps}
-    />
-  )
-})
+// export const Flex: FlexComponent = forwardRef((props, ref) => {
+//   const { direction, grow, shrink, wrap, ...restProps } = props
+
+//   return (
+//     <Box
+//       ref={ref}
+//       display="flex"
+//       flexDirection={direction}
+//       flexGrow={grow}
+//       flexShrink={shrink}
+//       flexWrap={wrap}
+//       {...restProps}
+//     />
+//   )
+// })
