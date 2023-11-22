@@ -14,8 +14,6 @@ import {
   PolymorphicRef,
 } from '@/design/types/Polymorphic'
 
-// ... (Your utility types stay the same)
-
 export interface Props
   extends Omit<
       AllHTMLAttributes<HTMLElement>,
@@ -85,7 +83,6 @@ export const Box: BoxComponent = forwardRef(
       minWidth,
       transition,
       overflow,
-      className,
       ...restProps
     }: BoxProps<C>,
     ref?: PolymorphicRef<C>,
@@ -137,7 +134,6 @@ export const Box: BoxComponent = forwardRef(
         transition,
         overflow,
       }),
-      className,
     )
 
     return createElement(component, {

@@ -1,28 +1,46 @@
-// import type * as Polymorphic from '@radix-ui/react-polymorphic'
-// import React from 'react'
-// import clsx from 'clsx'
+import { ButtonHTMLAttributes, PropsWithChildren, ReactNode } from 'react'
+import Link from 'next/link'
+import { Box } from '..'
+import * as styles from './Button.css'
 
-// import { ButtonBase, ButtonBaseProps } from '../ButtonBase'
+interface ButtonLinkProps
+  extends PropsWithChildren,
+    ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'solid' | 'transparent'
+  text?: string
+  icon?: ReactNode
+  href?: string
+}
 
-// import * as styles from './Button.css'
+export const Button = ({
+  href,
+  variant = 'solid',
+  icon,
+  text,
+  children,
+  ...props
+}: ButtonLinkProps) => {
+  const buttonClass = styles.buttonStyle({ variant })
 
-// interface Props {}
+  const content = (
+    <>
+      {children}
+      {text}
+      {icon && (
+        <Box display="inline" paddingLeft="xsmall">
+          {icon}
+        </Box>
+      )}
+    </>
+  )
 
-// type PolymorphicButton = Polymorphic.ForwardRefComponent<
-//   Polymorphic.IntrinsicElement<typeof ButtonBase>,
-//   ButtonBaseProps & Props
-// >
-
-// export type ButtonProps = Polymorphic.OwnProps<PolymorphicButton>
-
-// export const Button = React.forwardRef((props, ref) => {
-//   const { className, ...restProps } = props
-
-//   return (
-//     <ButtonBase
-//       ref={ref}
-//       className={clsx(styles.root, className)}
-//       {...restProps}
-//     />
-//   )
-// }) as PolymorphicButton
+  return href ? (
+    <Link href={href} className={buttonClass}>
+      {content}
+    </Link>
+  ) : (
+    <button className={buttonClass} {...props}>
+      {content}
+    </button>
+  )
+}
