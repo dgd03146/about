@@ -30,10 +30,8 @@ export interface Props
   className?: Parameters<typeof classnames>[0]
 }
 
-type BoxProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<
-  C,
-  Props
->
+export type BoxProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<C, Props>
 
 type BoxComponent = <C extends React.ElementType = 'div'>(
   props: BoxProps<C>,

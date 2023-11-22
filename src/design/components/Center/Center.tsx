@@ -1,27 +1,27 @@
-// import type * as Polymorphic from '@radix-ui/react-polymorphic'
-// import React from 'react'
+import React, { forwardRef } from 'react'
+import { Box } from '..'
+import { BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 
-// import { Box, BoxProps } from '../Box'
+type CenterComponent = <C extends React.ElementType = 'div'>(
+  props: BoxProps<C>,
+) => React.ReactNode | null
 
-// interface Props {}
+const Center: CenterComponent = forwardRef(
+  <C extends React.ElementType = 'div'>(
+    { ...restProps }: BoxProps<C>,
+    ref?: PolymorphicRef<C>,
+  ) => {
+    return (
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        ref={ref}
+        {...restProps}
+      />
+    )
+  },
+)
 
-// type PolymorphicCenter = Polymorphic.ForwardRefComponent<
-//   Polymorphic.IntrinsicElement<typeof Box>,
-//   BoxProps & Props
-// >
-
-// export type CenterProps = Polymorphic.OwnProps<PolymorphicCenter>
-
-// export const Center = React.forwardRef((props, ref) => {
-//   return (
-//     <Box
-//       ref={ref}
-//       display="flex"
-//       alignItems="center"
-//       justifyContent="center"
-//       {...props}
-//     />
-//   )
-// }) as PolymorphicCenter
-
-// Center.displayName = 'Center'
+export default Center
