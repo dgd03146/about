@@ -2,7 +2,8 @@
 
 import { Box } from '@/design/components'
 import { Button } from '@/design/components/Button'
-import Center from '@/design/components/Center/Center'
+import { Center } from '@/design/components/Center'
+import { Container } from '@/design/components/Container/Container'
 import TestHook from '@/hooks/testHooks'
 
 export default function Home() {
@@ -22,6 +23,10 @@ export default function Home() {
             This is in Center Component
           </Box>
         </Center>
+        <Container>
+          <Button text="container" />
+          <Box>여기는 콘테이너</Box>
+        </Container>
       </main>
     </div>
   )

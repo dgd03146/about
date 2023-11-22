@@ -41,6 +41,8 @@ const fontMetrics = {
 const tailwindPalette = {
   white: '#fff',
   black: '#0e0e10',
+  primary: '#C8102E',
+  secondary: '#0F64CD',
 
   red: colors.red['500'],
   yellow: colors.yellow['300'],

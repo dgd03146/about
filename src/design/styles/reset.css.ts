@@ -27,6 +27,7 @@ const body = style({
 })
 
 const list = style({
+  padding: '0',
   listStyle: 'none',
 })
 

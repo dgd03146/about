@@ -7,7 +7,7 @@ type CenterComponent = <C extends React.ElementType = 'div'>(
   props: BoxProps<C>,
 ) => React.ReactNode | null
 
-const Center: CenterComponent = forwardRef(
+export const Center: CenterComponent = forwardRef(
   <C extends React.ElementType = 'div'>(
     { ...restProps }: BoxProps<C>,
     ref?: PolymorphicRef<C>,
@@ -23,5 +23,3 @@ const Center: CenterComponent = forwardRef(
     )
   },
 )
-
-export default Center
