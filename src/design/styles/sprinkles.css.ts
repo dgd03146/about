@@ -28,7 +28,7 @@ const margins = {
   ...negativeSpace,
 }
 
-const responsiveProperties = defineProperties({
+export const responsiveProperties = defineProperties({
   conditions: mapValues(breakpoints, (bp) =>
     bp === 0 ? {} : { '@media': `screen and (min-width: ${bp}px)` },
   ),
@@ -36,7 +36,7 @@ const responsiveProperties = defineProperties({
   properties: {
     position: ['absolute', 'relative', 'fixed'],
     display: ['none', 'block', 'inline', 'inline-block', 'flex'],
-    alignItems: ['flex-start', 'center', 'flex-end'],
+    alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
     justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
     flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
     paddingTop: space,
@@ -92,7 +92,7 @@ const colorProperties = defineProperties({
   },
 })
 
-const unresponsiveProperties = defineProperties({
+export const unresponsiveProperties = defineProperties({
   properties: {
     flexWrap: ['wrap', 'nowrap'],
     top: [0],

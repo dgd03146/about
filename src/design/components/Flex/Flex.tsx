@@ -1,33 +1,39 @@
-// import type { ReactNode } from 'react'
-// import { forwardRef } from 'react'
+import React, { forwardRef } from 'react'
+import { Box } from '..'
+import {
+  responsiveProperties,
+  unresponsiveProperties,
+} from '../../styles/sprinkles.css'
+import {
+  PolymorphicComponentPropWithRef,
+  PolymorphicRef,
+} from '@/design/types/Polymorphic'
 
-// import { Box } from '../Box'
-// import { Sprinkles } from '@/design/components/sprinkles.css'
-// import { PolymorphicComponentPropWithRef } from '@/design/types/Polymorphic'
+interface Props {
+  direction?: keyof typeof responsiveProperties.styles.flexDirection.values
+  grow?: keyof typeof unresponsiveProperties.styles.flexGrow.values
+  shrink?: keyof typeof unresponsiveProperties.styles.flexShrink.values
+  wrap?: keyof typeof unresponsiveProperties.styles.flexWrap.values
+}
 
-// interface Props {
-//   direction?: Sprinkles['flexDirection']
-//   grow?: Sprinkles['flexGrow']
-//   shrink?: Sprinkles['flexShrink']
-//   wrap?: Sprinkles['flexWrap']
-// }
+export type FlexProps<C extends React.ElementType> =
+  PolymorphicComponentPropWithRef<C, Props>
 
-// type FlexProps = PolymorphicComponentPropWithRef<typeof Box, Props>
-
-// type FlexComponent = (props: FlexProps) => ReactNode | null
-
-// export const Flex: FlexComponent = forwardRef((props, ref) => {
-//   const { direction, grow, shrink, wrap, ...restProps } = props
-
-//   return (
-//     <Box
-//       ref={ref}
-//       display="flex"
-//       flexDirection={direction}
-//       flexGrow={grow}
-//       flexShrink={shrink}
-//       flexWrap={wrap}
-//       {...restProps}
-//     />
-//   )
-// })
+export const Flex = forwardRef(
+  <C extends React.ElementType = 'div'>(
+    { direction, grow, shrink, wrap, ...restProps }: FlexProps<C>,
+    ref?: PolymorphicRef<C>,
+  ) => {
+    return (
+      <Box
+        display="flex"
+        ref={ref}
+        flexDirection={direction}
+        flexGrow={grow}
+        flexShrink={shrink}
+        flexWrap={wrap}
+        {...restProps}
+      />
+    )
+  },
+)

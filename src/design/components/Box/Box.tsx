@@ -33,11 +33,7 @@ export interface Props
 export type BoxProps<C extends React.ElementType> =
   PolymorphicComponentPropWithRef<C, Props>
 
-type BoxComponent = <C extends React.ElementType = 'div'>(
-  props: BoxProps<C>,
-) => React.ReactNode | null
-
-export const Box: BoxComponent = forwardRef(
+export const Box = forwardRef(
   <C extends React.ElementType = 'div'>(
     {
       as,

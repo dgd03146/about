@@ -13,18 +13,15 @@ export default function Home() {
         <h4>Welcome to Next.js</h4>
         <button type="button"> Visit the Github </button>
         <TestHook />
-        <Box as="h1" color="blue500" padding="large">
+        <Box as="h1" color="blue500" padding="large" marginY="xxlarge">
           hihi
         </Box>
         <Button variant="transparent" text="hihi" />
-        <Center as="h1">
+        <Center as="h3">
           <Button text="This is in the Center Component" />
-          <Box as="h2" color="black">
-            This is in Center Component
-          </Box>
         </Center>
-        <Container>
-          <Button text="container" />
+        <Container centerContent>
+          <Button />
           <Box>여기는 콘테이너</Box>
         </Container>
       </main>

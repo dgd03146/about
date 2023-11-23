@@ -175,6 +175,7 @@ export const vars = createGlobalTheme(':root', {
     xlarge: px(8 * grid),
     xxlarge: px(12 * grid),
     xxxlarge: px(24 * grid),
+    auto: 'auto',
   },
   contentWidth: {
     xsmall: px(480),
