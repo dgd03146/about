@@ -1,20 +1,20 @@
 import React, { forwardRef } from 'react'
-import { Box } from '..'
-import {
-  PolymorphicRef,
-  PolymorphicComponentPropWithRef,
-} from '@/design/types/Polymorphic'
+import { Box, BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 
-export type CenterProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<C>
+type CenterProps<C extends React.ElementType> = BoxProps<C, {}>
 
-export const Center = forwardRef(
+type CenterComponent = <C extends React.ElementType = 'div'>(
+  props: CenterProps<C>,
+) => React.ReactNode | null
+
+export const Center: CenterComponent = forwardRef(
   <C extends React.ElementType = 'div'>(
     { ...restProps }: CenterProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     return (
-      <Box
+      <Box<C>
         display="flex"
         alignItems="center"
         justifyContent="center"

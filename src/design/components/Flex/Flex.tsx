@@ -4,28 +4,27 @@ import {
   responsiveProperties,
   unresponsiveProperties,
 } from '../../styles/sprinkles.css'
-import {
-  PolymorphicComponentPropWithRef,
-  PolymorphicRef,
-} from '@/design/types/Polymorphic'
+import { BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 
-interface Props {
+type Props = {
   direction?: keyof typeof responsiveProperties.styles.flexDirection.values
   grow?: keyof typeof unresponsiveProperties.styles.flexGrow.values
   shrink?: keyof typeof unresponsiveProperties.styles.flexShrink.values
   wrap?: keyof typeof unresponsiveProperties.styles.flexWrap.values
 }
 
-export type FlexProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<C, Props>
+export type FlexProps<C extends React.ElementType> = BoxProps<C, Props>
 
 export const Flex = forwardRef(
   <C extends React.ElementType = 'div'>(
-    { direction, grow, shrink, wrap, ...restProps }: FlexProps<C>,
+    { as, direction, grow, shrink, wrap, ...restProps }: FlexProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
+    const ElementType: React.ElementType = as || 'div'
     return (
-      <Box
+      <Box<typeof ElementType, Props>
+        as={as}
         display="flex"
         ref={ref}
         flexDirection={direction}

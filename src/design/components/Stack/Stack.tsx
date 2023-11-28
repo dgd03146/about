@@ -1,32 +1,48 @@
-// import type * as Polymorphic from '@radix-ui/react-polymorphic'
-// import React from 'react'
+import { Children, ReactNode, forwardRef, ElementType } from 'react'
 
-// import { Atoms } from '../../atoms'
-// import { Flex, FlexProps } from '../Flex'
+import { BoxProps, Box } from '../Box/Box'
+import {
+  mapResponsiveValue,
+  ResponsiveValue,
+} from '@/design/styles/sprinkles.css'
 
-// interface Props {
-//   align?: Atoms['alignItems']
-//   justify?: Atoms['justifyContent']
-// }
+type Props<C extends ElementType> = {
+  children: ReactNode
+  space: BoxProps<C>['paddingBottom']
+  align?: ResponsiveValue<'left' | 'center' | 'right'>
+}
 
-// type PolymorphicStack = Polymorphic.ForwardRefComponent<
-//   Polymorphic.IntrinsicElement<typeof Flex>,
-//   FlexProps & Props
-// >
+type StackProps<C extends React.ElementType> = BoxProps<C, Props<C>>
 
-// export type StackProps = Polymorphic.OwnProps<PolymorphicStack>
+const alignToFlexAlign = {
+  left: 'flex-start',
+  center: 'center',
+  right: 'flex-end',
+} as const
 
-// export const Stack = React.forwardRef((props, ref) => {
-//   const { align, justify, wrap = 'wrap', ...restProps } = props
+export const Stack = forwardRef(
+  <C extends React.ElementType = 'div'>({
+    children,
+    space,
+    align,
+  }: StackProps<C>) => {
+    const stackItems = Children.toArray(children)
+    const alignItems = align
+      ? mapResponsiveValue(align, (value) => alignToFlexAlign[value])
+      : undefined
 
-//   return (
-//     <Flex
-//       ref={ref}
-//       direction="column"
-//       wrap={wrap}
-//       alignItems={align}
-//       justifyContent={justify}
-//       {...restProps}
-//     />
-//   )
-// }) as PolymorphicStack
+    return (
+      <Box display="flex" flexDirection="column" alignItems={alignItems}>
+        {stackItems.map((item, index) => (
+          <Box
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            paddingBottom={index !== stackItems.length - 1 ? space : undefined}
+          >
+            {item}
+          </Box>
+        ))}
+      </Box>
+    )
+  },
+)

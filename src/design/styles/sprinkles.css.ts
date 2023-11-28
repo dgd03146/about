@@ -35,7 +35,7 @@ export const responsiveProperties = defineProperties({
   defaultCondition: 'mobile',
   properties: {
     position: ['absolute', 'relative', 'fixed'],
-    display: ['none', 'block', 'inline', 'inline-block', 'flex'],
+    display: ['none', 'block', 'inline', 'inline-block', 'flex', 'grid'],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
     justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
     flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],

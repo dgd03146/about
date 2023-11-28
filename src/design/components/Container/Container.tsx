@@ -1,33 +1,37 @@
 import React, { forwardRef } from 'react'
-import { Box } from '..'
-
-import {
-  PolymorphicComponentPropWithRef,
-  PolymorphicRef,
-} from '@/design/types/Polymorphic'
+import { Box, BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 import { vars } from '@/design/vars.css'
 
-interface Props {
+type Props = {
   centerContent?: boolean
   maxWidth?: keyof typeof vars.contentWidth
 }
 
-export type ContainerProps<C extends React.ElementType> =
-  PolymorphicComponentPropWithRef<C, Props>
+type ContainerProps<C extends React.ElementType> = BoxProps<C, Props>
 
-export const Container = forwardRef(
+type ContainerComponent = <C extends React.ElementType = 'div'>(
+  props: ContainerProps<C>,
+) => React.ReactNode | null
+
+export const Container: ContainerComponent = forwardRef(
   <C extends React.ElementType = 'div'>(
-    { maxWidth, centerContent, ...restProps }: ContainerProps<C>,
+    { as, centerContent, maxWidth, ...restProps }: ContainerProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     const alignItems = centerContent ? 'center' : 'stretch'
     const flexDirection = centerContent ? 'column' : 'row'
+    const display = centerContent ? 'flex' : 'block'
+
+    const ElementType: React.ElementType = as || 'div'
 
     return (
-      <Box
-        maxWidth={maxWidth}
+      <Box<typeof ElementType, Props>
+        as={as}
         marginLeft="auto"
         marginRight="auto"
+        maxWidth={maxWidth || 'large'}
+        display={display}
         alignItems={alignItems}
         flexDirection={flexDirection}
         ref={ref}

@@ -1,62 +1,39 @@
-// import type * as Polymorphic from '@radix-ui/react-polymorphic'
-// import React from 'react'
+import React, { forwardRef } from 'react'
+import { Box } from '..'
+import {
+  responsiveProperties,
+  unresponsiveProperties,
+} from '../../styles/sprinkles.css'
+import { BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 
-// import { Atoms } from '../../atoms'
-// import { Box, BoxProps } from '../Box'
+type Props = {
+  direction?: keyof typeof responsiveProperties.styles.flexDirection.values
+  grow?: keyof typeof unresponsiveProperties.styles.flexGrow.values
+  shrink?: keyof typeof unresponsiveProperties.styles.flexShrink.values
+  wrap?: keyof typeof unresponsiveProperties.styles.flexWrap.values
+}
 
-// interface Props {
-//   gap?: Atoms['gap']
-//   place?: Atoms['placeContent']
-//   grid?: string
-//   rows?: string[]
-//   autoRows?: string
-//   autoColumns?: string
-//   columns?: string[]
-//   areas?: string[]
-//   area?: string
-// }
+export type GridProps<C extends React.ElementType> = BoxProps<C, Props>
 
-// type PolymorphicGrid = Polymorphic.ForwardRefComponent<
-//   Polymorphic.IntrinsicElement<typeof Box>,
-//   Omit<BoxProps, 'rows'> & Props
-// >
+export const Grid = forwardRef(
+  <C extends React.ElementType = 'div'>(
+    { as, direction, grow, shrink, wrap, ...restProps }: GridProps<C>,
+    ref?: PolymorphicRef<C>,
+  ) => {
+    const ElementType: React.ElementType = as || 'div'
 
-// export type GridProps = Polymorphic.OwnProps<PolymorphicGrid>
-
-// export const Grid = React.forwardRef((props, ref) => {
-//   const {
-//     gap,
-//     grid,
-//     area,
-//     areas,
-//     columns,
-//     rows,
-//     autoRows,
-//     autoColumns,
-//     place,
-//     style,
-//     ...restProps
-//   } = props
-
-//   return (
-//     <Box
-//       ref={ref}
-//       display="grid"
-//       gap={gap}
-//       placeContent={place}
-//       style={{
-//         grid,
-//         gridArea: area,
-//         gridTemplateColumns: columns?.join(' '),
-//         gridTemplateRows: rows?.join(' '),
-//         gridAutoRows: autoRows,
-//         gridAutoColumns: autoColumns,
-//         gridTemplateAreas: areas?.length ? `'${areas.join(`' '`)}'` : undefined,
-//         ...style,
-//       }}
-//       {...restProps}
-//     />
-//   )
-// }) as PolymorphicGrid
-
-// Grid.displayName = 'Grid'
+    return (
+      <Box<typeof ElementType, Props>
+        as={as}
+        display="grid"
+        ref={ref}
+        flexDirection={direction}
+        flexGrow={grow}
+        flexShrink={shrink}
+        flexWrap={wrap}
+        {...restProps}
+      />
+    )
+  },
+)

@@ -19,8 +19,8 @@ export const buttonStyle = recipe({
   variants: {
     variant: {
       solid: sprinkles({
-        background: { lightMode: 'coolGray900', darkMode: 'gray100' },
-        color: { lightMode: 'coolGray50', darkMode: 'gray900' },
+        background: { lightMode: 'yellow', darkMode: 'gray100' },
+        color: { lightMode: 'white', darkMode: 'gray900' },
       }),
       transparent: sprinkles({
         color: { lightMode: 'coolGray900', darkMode: 'gray100' },
