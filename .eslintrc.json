@@ -27,6 +27,7 @@
     "prettier" // eslint-config-prettier prettier와 중복된 eslint 규칙 제거
   ],
   "rules": {
+    "react/no-array-index-key": 0,
     "react/button-has-type": 0,
     "@typescript-eslint/ban-types": 0,
     "react/display-name": 0,
