@@ -21,7 +21,7 @@ type ButtonProps = BoxProps<'button', Props>
 type ButtonComponent = (props: ButtonProps) => React.ReactNode | null
 
 export const Button: ButtonComponent = forwardRef(
-  ({ href, variant = 'solid', icon, text, children }: ButtonProps) => {
+  ({ href, variant = 'solid', icon, text, children, ref }: ButtonProps) => {
     const buttonClass = styles.buttonStyle({ variant })
 
     const content = (
@@ -41,7 +41,7 @@ export const Button: ButtonComponent = forwardRef(
         {content}
       </Link>
     ) : (
-      <Box as="button" className={buttonClass}>
+      <Box as="button" className={buttonClass} ref={ref}>
         {content}
       </Box>
     )
