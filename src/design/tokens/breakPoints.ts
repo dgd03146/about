@@ -1,7 +1,9 @@
+import { px } from '../theme.css'
+
 export const breakpoints = {
-  xs: '0',
-  sm: '600px',
-  md: '960px',
-  lg: '1280px',
-  xl: '1920px',
+  mobile: px(0),
+  tablet: px(600),
+  laptop: px(960),
+  desktop: px(1280),
+  tv: px(1920),
 }

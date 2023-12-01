@@ -8,7 +8,7 @@ interface SelectProps<Option>
     UseSelectParams<Option>,
     Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'> {}
 
-const Select = <Option,>({
+export const Select = <Option,>({
   selectedOption,
   options,
   onChange,
@@ -24,5 +24,3 @@ const Select = <Option,>({
     </Box>
   )
 }
-
-export default Select

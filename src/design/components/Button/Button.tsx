@@ -1,9 +1,14 @@
-import { ButtonHTMLAttributes, PropsWithChildren, ReactNode } from 'react'
+import {
+  ButtonHTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+  forwardRef,
+} from 'react'
 import Link from 'next/link'
-import { Box } from '..'
+import { Box, BoxProps } from '..'
 import * as styles from './Button.css'
 
-interface ButtonLinkProps
+interface Props
   extends PropsWithChildren,
     ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'solid' | 'transparent'
@@ -12,35 +17,33 @@ interface ButtonLinkProps
   href?: string
 }
 
-export const Button = ({
-  href,
-  variant = 'solid',
-  icon,
-  text,
-  children,
-  ...props
-}: ButtonLinkProps) => {
-  const buttonClass = styles.buttonStyle({ variant })
+type ButtonProps = BoxProps<'button', Props>
+type ButtonComponent = (props: ButtonProps) => React.ReactNode | null
 
-  const content = (
-    <>
-      {children}
-      {text}
-      {icon && (
-        <Box display="inline" paddingLeft="xsmall">
-          {icon}
-        </Box>
-      )}
-    </>
-  )
+export const Button: ButtonComponent = forwardRef(
+  ({ href, variant = 'solid', icon, text, children }: ButtonProps) => {
+    const buttonClass = styles.buttonStyle({ variant })
 
-  return href ? (
-    <Link href={href} className={buttonClass}>
-      {content}
-    </Link>
-  ) : (
-    <button className={buttonClass} {...props}>
-      {content}
-    </button>
-  )
-}
+    const content = (
+      <>
+        {children}
+        {text}
+        {icon && (
+          <Box display="inline" paddingLeft="xsmall">
+            {icon}
+          </Box>
+        )}
+      </>
+    )
+
+    return href ? (
+      <Link href={href} className={buttonClass}>
+        {content}
+      </Link>
+    ) : (
+      <Box as="button" className={buttonClass}>
+        {content}
+      </Box>
+    )
+  },
+)

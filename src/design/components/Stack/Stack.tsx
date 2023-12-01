@@ -1,26 +1,15 @@
 import { Children, ReactNode, forwardRef, ElementType } from 'react'
 
 import { BoxProps, Box } from '../Box/Box'
-import {
-  mapResponsiveValue,
-  ResponsiveValue,
-  Space,
-} from '@/design/styles/sprinkles.css'
+import { Space } from '@/design/styles/sprinkles.css'
 import { PolymorphicRef } from '@/design/types/Polymorphic'
 
 type Props = {
   children?: ReactNode
   space?: Space
-  align?: ResponsiveValue<'left' | 'center' | 'right'>
 }
 
 type StackProps<C extends ElementType> = BoxProps<C, Props>
-
-const alignToFlexAlign = {
-  left: 'flex-start',
-  center: 'center',
-  right: 'flex-end',
-} as const
 
 type StackComponent = <C extends React.ElementType = 'div'>(
   props: StackProps<C>,
@@ -28,13 +17,10 @@ type StackComponent = <C extends React.ElementType = 'div'>(
 
 export const Stack: StackComponent = forwardRef(
   <C extends ElementType = 'div'>(
-    { as, children, space, align, ...restProps }: StackProps<C>,
+    { as, children, space, alignItems, ...restProps }: StackProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     const stackItems = Children.toArray(children)
-    const alignItems = align
-      ? mapResponsiveValue(align, (value) => alignToFlexAlign[value])
-      : undefined
 
     const ComponentType: React.ElementType = as || 'div'
 

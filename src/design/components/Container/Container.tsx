@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { Box, BoxProps } from '../Box/Box'
+import { vars } from '@/design/theme.css'
 import { PolymorphicRef } from '@/design/types/Polymorphic'
-import { vars } from '@/design/vars.css'
 
 type Props = {
   centerContent?: boolean

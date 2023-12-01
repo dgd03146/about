@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Test = ({ name, type }: { name: string; type: string }) => {
+const Test = ({ name }: { name: string }) => {
   return <div>{name}</div>
 }
 

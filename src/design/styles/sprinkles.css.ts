@@ -2,13 +2,11 @@ import { calc } from '@vanilla-extract/css-utils'
 import {
   defineProperties,
   createSprinkles,
-  createMapValueFn,
-  createNormalizeValueFn,
   ConditionalValue,
 } from '@vanilla-extract/sprinkles'
-import mapValues from 'lodash/mapValues'
+
 import { vars } from '../theme.css'
-import { breakpoints } from '../themeUtils'
+import { breakpoints } from '../tokens'
 
 const space = vars.spacing
 export type Space = keyof typeof space
@@ -29,9 +27,13 @@ const margins = {
 }
 
 export const responsiveProperties = defineProperties({
-  conditions: mapValues(breakpoints, (bp) =>
-    bp === 0 ? {} : { '@media': `screen and (min-width: ${bp}px)` },
-  ),
+  conditions: {
+    mobile: {},
+    tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
+    laptop: { '@media': `screen and (min-width: ${breakpoints.laptop})` },
+    desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },
+    tv: { '@media': `screen and (min-width: ${breakpoints.tv})` },
+  },
   defaultCondition: 'mobile',
   properties: {
     position: ['absolute', 'relative', 'fixed'],
@@ -68,10 +70,6 @@ export const responsiveProperties = defineProperties({
   },
 })
 
-export const mapResponsiveValue = createMapValueFn(responsiveProperties)
-export const normalizeResponsiveValue =
-  createNormalizeValueFn(responsiveProperties)
-
 export type ResponsiveValue<Value extends string | number> = ConditionalValue<
   typeof responsiveProperties,
   Value
@@ -89,6 +87,13 @@ const colorProperties = defineProperties({
   properties: {
     background: vars.palette,
     color: vars.palette,
+  },
+})
+
+export const textProperties = defineProperties({
+  properties: {
+    fontWeight: vars.fontWeight,
+    fontSize: vars.fontSizes,
   },
 })
 
@@ -112,6 +117,7 @@ export const unresponsiveProperties = defineProperties({
 })
 
 export const sprinkles = createSprinkles(
+  textProperties,
   responsiveProperties,
   unresponsiveProperties,
   colorProperties,

@@ -1,42 +1,8 @@
-import { precomputeValues } from '@capsizecss/vanilla-extract'
 import { createGlobalTheme } from '@vanilla-extract/css'
 import colors from 'tailwindcss/colors'
 
-import { Breakpoint } from './themeUtils'
-
 const grid = 4
-const px = (value: string | number) => `${value}px`
-
-const fontMetrics = {
-  brand: {
-    capHeight: 669,
-    ascent: 1026,
-    descent: -432,
-    lineGap: 0,
-    unitsPerEm: 1000,
-  },
-  heading: {
-    capHeight: 700,
-    ascent: 992,
-    descent: -310,
-    lineGap: 0,
-    unitsPerEm: 1000,
-  },
-  body: {
-    capHeight: 1443,
-    ascent: 1950,
-    descent: -494,
-    lineGap: 0,
-    unitsPerEm: 2048,
-  },
-  code: {
-    capHeight: 700,
-    ascent: 1060,
-    descent: -320,
-    lineGap: 0,
-    unitsPerEm: 1000,
-  },
-}
+export const px = (value: string | number) => `${value}px`
 
 const tailwindPalette = {
   white: '#fff',
@@ -113,50 +79,6 @@ const tailwindPalette = {
   pink900: colors.fuchsia['900'],
 }
 
-const calculateTypographyStyles = (
-  definition: Record<Breakpoint, { fontSize: number; rows: number }>,
-  type: keyof typeof fontMetrics,
-) => {
-  const mobile = precomputeValues({
-    fontSize: definition.mobile.fontSize,
-    leading: definition.mobile.rows * grid,
-    fontMetrics: fontMetrics[type],
-  })
-
-  const tablet = precomputeValues({
-    fontSize: definition.tablet.fontSize,
-    leading: definition.tablet.rows * grid,
-    fontMetrics: fontMetrics[type],
-  })
-
-  const desktop = precomputeValues({
-    fontSize: definition.desktop.fontSize,
-    leading: definition.desktop.rows * grid,
-    fontMetrics: fontMetrics[type],
-  })
-
-  return {
-    mobile: {
-      fontSize: mobile.fontSize,
-      lineHeight: mobile.lineHeight,
-      capHeightTrim: mobile.capHeightTrim,
-      baselineTrim: mobile.baselineTrim,
-    },
-    tablet: {
-      fontSize: tablet.fontSize,
-      lineHeight: tablet.lineHeight,
-      capHeightTrim: tablet.capHeightTrim,
-      baselineTrim: tablet.baselineTrim,
-    },
-    desktop: {
-      fontSize: desktop.fontSize,
-      lineHeight: desktop.lineHeight,
-      capHeightTrim: desktop.capHeightTrim,
-      baselineTrim: desktop.baselineTrim,
-    },
-  }
-}
-
 export const vars = createGlobalTheme(':root', {
   fonts: {
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
@@ -185,149 +107,21 @@ export const vars = createGlobalTheme(':root', {
     xlarge: px(1120),
     xxlarge: px(1350),
   },
-  heading: {
-    h1: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 36,
-          rows: 12,
-        },
-        tablet: {
-          fontSize: 52,
-          rows: 15,
-        },
-        desktop: {
-          fontSize: 52,
-          rows: 15,
-        },
-      },
-      'heading',
-    ),
-    h2: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 28,
-          rows: 10,
-        },
-        tablet: {
-          fontSize: 38,
-          rows: 12,
-        },
-        desktop: {
-          fontSize: 38,
-          rows: 12,
-        },
-      },
-      'heading',
-    ),
-    h3: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 24,
-          rows: 8,
-        },
-        tablet: {
-          fontSize: 30,
-          rows: 10,
-        },
-        desktop: {
-          fontSize: 30,
-          rows: 10,
-        },
-      },
-      'heading',
-    ),
-    h4: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 22,
-          rows: 8,
-        },
-        tablet: {
-          fontSize: 22,
-          rows: 9,
-        },
-        desktop: {
-          fontSize: 22,
-          rows: 9,
-        },
-      },
-      'heading',
-    ),
+  fontSizes: {
+    xsmall: px(12),
+    small: px(14),
+    medium: px(16),
+    large: px(18),
+    xlarge: px(20),
+    xxlarge: px(24),
+    xxxlarge: px(30),
+    xxxxlarge: px(36),
+    xxxxxlarge: px(48),
   },
-  text: {
-    standard: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 18,
-          rows: 9,
-        },
-        tablet: {
-          fontSize: 20,
-          rows: 10,
-        },
-        desktop: {
-          fontSize: 20,
-          rows: 10,
-        },
-      },
-      'body',
-    ),
-    code: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 13,
-          rows: 6,
-        },
-        tablet: {
-          fontSize: 14,
-          rows: 7,
-        },
-        desktop: {
-          fontSize: 14,
-          rows: 7,
-        },
-      },
-      'body',
-    ),
-    small: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 16,
-          rows: 8,
-        },
-        tablet: {
-          fontSize: 16,
-          rows: 8,
-        },
-        desktop: {
-          fontSize: 16,
-          rows: 8,
-        },
-      },
-      'body',
-    ),
-    xsmall: calculateTypographyStyles(
-      {
-        mobile: {
-          fontSize: 15,
-          rows: 7,
-        },
-        tablet: {
-          fontSize: 15,
-          rows: 7,
-        },
-        desktop: {
-          fontSize: 15,
-          rows: 7,
-        },
-      },
-      'body',
-    ),
-  },
-  weight: {
-    regular: '400',
-    strong: '700',
+  fontWeight: {
+    normal: '400',
+    semibold: '500',
+    bold: '700',
   },
   palette: tailwindPalette,
   border: {
