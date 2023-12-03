@@ -5,6 +5,7 @@ import {
   forwardRef,
 } from 'react'
 import Link from 'next/link'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 import { Box, BoxProps } from '..'
 import * as styles from './Button.css'
 
@@ -21,7 +22,10 @@ type ButtonProps = BoxProps<'button', Props>
 type ButtonComponent = (props: ButtonProps) => React.ReactNode | null
 
 export const Button: ButtonComponent = forwardRef(
-  ({ href, variant = 'solid', icon, text, children, ref }: ButtonProps) => {
+  (
+    { href, variant = 'solid', icon, text, children }: ButtonProps,
+    ref?: PolymorphicRef<'button'>,
+  ) => {
     const buttonClass = styles.buttonStyle({ variant })
 
     const content = (
