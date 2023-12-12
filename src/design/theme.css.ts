@@ -7,7 +7,7 @@ export const px = (value: string | number) => `${value}px`
 const tailwindPalette = {
   white: '#fff',
   black: '#0e0e10',
-  primary: '#C8102E',
+  primary: '#F0DC28',
   secondary: '#0F64CD',
 
   red: colors.red['500'],
@@ -100,12 +100,13 @@ export const vars = createGlobalTheme(':root', {
     auto: 'auto',
   },
   contentWidth: {
-    xsmall: px(480),
-    small: px(600),
+    xsmall: px(360), // mobile
+    small: px(600), // tablet
     standard: px(740),
-    large: px(960),
-    xlarge: px(1120),
-    xxlarge: px(1350),
+    large: px(1080), // laptop
+    xlarge: px(1200), // desktop
+    xxlarge: px(1920), // tv
+    full: '100%',
   },
   fontSizes: {
     xsmall: px(12),

@@ -1,5 +1,3 @@
-'use client'
-
 import React, {
   AllHTMLAttributes,
   ElementType,
@@ -7,12 +5,12 @@ import React, {
   forwardRef,
 } from 'react'
 import classnames from 'classnames'
-import * as resetStyles from '../../styles/reset.css'
 import { Sprinkles, sprinkles } from '@/design/styles/sprinkles.css'
 import {
   PolymorphicComponentPropWithRef,
   PolymorphicRef,
 } from '@/design/types/Polymorphic'
+import * as resetStyles from '../../styles/reset.css'
 
 export interface Props
   extends Omit<
@@ -83,6 +81,9 @@ export const Box: BoxComponent = forwardRef(
       minWidth,
       transition,
       overflow,
+      gridTemplateColumns,
+      gridColumnGap,
+      className,
       ...restProps
     }: BoxProps<C, ExtraProps>,
     ref?: PolymorphicRef<C>,
@@ -90,6 +91,7 @@ export const Box: BoxComponent = forwardRef(
     const component = as || 'div'
 
     const atomClasses = classnames(
+      className,
       resetStyles.base,
       resetStyles.element[component as keyof typeof resetStyles.element],
       sprinkles({
@@ -133,6 +135,8 @@ export const Box: BoxComponent = forwardRef(
         minWidth,
         transition,
         overflow,
+        gridTemplateColumns,
+        gridColumnGap,
       }),
     )
 

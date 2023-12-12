@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Grid, Container } from '@/design/components'
+import * as S from './layout.css'
+
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
 
@@ -19,7 +22,16 @@ export default function RootLayout({
     <html lang="en">
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${S.BodyStyle}`}>
+        <div>이거는 헤더</div>
+        <Container maxWidth="full" centerContent>
+          <Grid as="main" className={S.MainStyle}>
+            <Grid as="section" className={S.SectionStyle}>
+              {children}
+            </Grid>
+          </Grid>
+        </Container>
+      </body>
       {/* </ThemeProviders> */}
     </html>
   )

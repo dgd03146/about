@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 import { Box } from '..'
 import {
   responsiveProperties,
   unresponsiveProperties,
 } from '../../styles/sprinkles.css'
 import { BoxProps } from '../Box/Box'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
 
 type Props = {
   direction?: keyof typeof responsiveProperties.styles.flexDirection.values
@@ -16,7 +16,11 @@ type Props = {
 
 export type FlexProps<C extends React.ElementType> = BoxProps<C, Props>
 
-export const Flex = forwardRef(
+type FlexComponent = <C extends React.ElementType = 'div'>(
+  props: FlexProps<C>,
+) => React.ReactNode | null
+
+export const Flex: FlexComponent = forwardRef(
   <C extends React.ElementType = 'div'>(
     { as, direction, grow, shrink, wrap, ...restProps }: FlexProps<C>,
     ref?: PolymorphicRef<C>,

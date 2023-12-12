@@ -23,7 +23,8 @@ const block = style({
 })
 
 const body = style({
-  lineHeight: 1,
+  padding: 0,
+  margin: 0,
 })
 
 const list = style({
@@ -74,6 +75,7 @@ export const element = {
   nav: block,
   section: block,
   textarea: block,
+  li: list,
   ul: list,
   ol: list,
   blockquote: quote,

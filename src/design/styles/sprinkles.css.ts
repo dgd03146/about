@@ -6,7 +6,7 @@ import {
 } from '@vanilla-extract/sprinkles'
 
 import { vars } from '../theme.css'
-import { breakpoints } from '../tokens'
+import { breakpoints } from '../tokens/breakPoints'
 
 const space = vars.spacing
 export type Space = keyof typeof space
@@ -26,15 +26,17 @@ const margins = {
   ...negativeSpace,
 }
 
+// FIXME: unify breakpoints
 export const responsiveProperties = defineProperties({
   conditions: {
-    mobile: {},
+    mobile: { '@media': `screen and (min-width: ${breakpoints.mobile})` },
     tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
     laptop: { '@media': `screen and (min-width: ${breakpoints.laptop})` },
     desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },
     tv: { '@media': `screen and (min-width: ${breakpoints.tv})` },
   },
   defaultCondition: 'mobile',
+  responsiveArray: ['mobile', 'tablet', 'laptop', 'desktop', 'tv'],
   properties: {
     position: ['absolute', 'relative', 'fixed'],
     display: ['none', 'block', 'inline', 'inline-block', 'flex', 'grid'],
@@ -53,7 +55,20 @@ export const responsiveProperties = defineProperties({
     overflow: ['hidden'],
     opacity: [0, 1],
     textAlign: ['left', 'center', 'right'],
-    minWidth: [0],
+    gridTemplateColumns: {
+      mobile: 'repeat(2, 1fr)',
+      tablet: 'repeat(4, 1fr)',
+      laptop: 'repeat(8, 1fr)',
+      desktop: 'repeat(12, 1fr)',
+    },
+    gridColumn: {
+      desktop: '1 / 13',
+      laptop: '1/9',
+      mobile: '1/7',
+    },
+    gridColumnGap: ['8px', '16px', '24px', '32px', '40px'],
+    width: vars.contentWidth,
+    minWidth: vars.contentWidth,
     maxWidth: vars.contentWidth,
     transition: {
       slow: 'transform .3s ease, opacity .3s ease',
@@ -107,7 +122,7 @@ export const unresponsiveProperties = defineProperties({
     flexShrink: [0],
     flexGrow: [0, 1],
     zIndex: [-1, 0, 1],
-    width: { full: '100%' },
+
     borderRadius: vars.border.radius,
     cursor: ['pointer'],
   },
