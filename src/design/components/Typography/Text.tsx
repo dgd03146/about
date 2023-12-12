@@ -1,9 +1,8 @@
 import { ReactNode, ElementType, forwardRef } from 'react'
 
+import { PolymorphicRef } from '@/design/types/Polymorphic'
 import { Box, BoxProps } from '..'
 import { TextStyle } from './typography.css'
-
-import { PolymorphicRef } from '@/design/types/Polymorphic'
 
 interface Props {
   text?: string
