@@ -7,9 +7,8 @@ import React, {
   HTMLAttributes,
   ComponentType,
 } from 'react'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
-import { Box } from '..'
-import { BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/system'
+import { Box, BoxProps } from '..'
 import ListItem from './ListItem'
 
 interface Props<T>

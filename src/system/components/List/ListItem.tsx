@@ -7,9 +7,8 @@ import React, {
   forwardRef,
 } from 'react'
 
-import { PolymorphicRef } from '@/design/types/Polymorphic'
-import { Box } from '..'
-import { BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/system'
+import { Box, BoxProps } from '..'
 
 interface Props
   extends PropsWithChildren<
