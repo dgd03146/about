@@ -5,7 +5,7 @@ import {
   forwardRef,
 } from 'react'
 import Link from 'next/link'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
+import { PolymorphicRef } from '@/system'
 import { Box, BoxProps } from '..'
 import * as styles from './Button.css'
 

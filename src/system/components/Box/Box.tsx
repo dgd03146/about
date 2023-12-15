@@ -5,11 +5,12 @@ import React, {
   forwardRef,
 } from 'react'
 import classnames from 'classnames'
-import { Sprinkles, sprinkles } from '@/design/styles/sprinkles.css'
 import {
+  Sprinkles,
+  sprinkles,
   PolymorphicComponentPropWithRef,
   PolymorphicRef,
-} from '@/design/types/Polymorphic'
+} from '@/system'
 import * as resetStyles from '../../styles/reset.css'
 
 export interface Props
@@ -91,7 +92,6 @@ export const Box: BoxComponent = forwardRef(
     ref?: PolymorphicRef<C>,
   ) => {
     const component = as || 'div'
-    console.log('🚀 ~ file: Box.tsx:94 ~ component:', component)
 
     const atomClasses = classnames(
       // resetStyles.base,
@@ -144,7 +144,6 @@ export const Box: BoxComponent = forwardRef(
         fontWeight,
       }),
     )
-    console.log('🚀 ~ file: Box.tsx:146 ~ atomClasses:', atomClasses)
 
     return createElement(component, {
       className: atomClasses,

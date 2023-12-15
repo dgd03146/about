@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Header } from '@/components/layout'
-import { Grid, Container } from '@/design/components'
+import { Header } from '@/layouts'
+import { Grid, Container } from '@/system/components'
 import * as S from './layout.css'
 
 // import ThemeProviders from './themeProviders'

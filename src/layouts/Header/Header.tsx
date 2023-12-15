@@ -1,5 +1,4 @@
-import { Flex } from '@/design/components'
-import { Heading } from '@/design/components/Typography/Heading'
+import { Flex, Heading } from '@/system/components'
 
 export const Header = () => {
   return (

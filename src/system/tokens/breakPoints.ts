@@ -1,5 +1,7 @@
 import { px } from '../theme.css'
 
+// break points 정리하기
+
 export const breakpoints = {
   mobile: px(360),
   tablet: px(600),

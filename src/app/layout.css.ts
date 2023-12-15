@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { sprinkles } from '@/design/styles/sprinkles.css'
+import { sprinkles } from '@/system'
 
 export const BodyStyle = style([
   sprinkles({
