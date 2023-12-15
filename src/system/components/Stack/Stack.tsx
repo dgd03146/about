@@ -1,8 +1,7 @@
 import { Children, ReactNode, forwardRef, ElementType } from 'react'
-
-import { Space } from '@/design/styles/sprinkles.css'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
-import { BoxProps, Box } from '../Box/Box'
+import { PolymorphicRef } from '@/system'
+import { Space } from '@/system/styles/sprinkles.css'
+import { Box, BoxProps } from '..'
 
 type Props = {
   children?: ReactNode

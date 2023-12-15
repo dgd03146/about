@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
-import { Box, BoxProps } from '../Box/Box'
+import { PolymorphicRef } from '@/system'
+import { Box, BoxProps } from '..'
 
 type CenterProps<C extends React.ElementType> = BoxProps<C, {}>
 

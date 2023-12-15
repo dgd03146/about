@@ -1,13 +1,13 @@
+import TestHook from '@/hooks/testHooks'
 import {
   Box,
-  Button,
   Center,
   Container,
   Heading,
   Stack,
   Text,
-} from '@/design/components'
-import TestHook from '@/hooks/testHooks'
+  Button,
+} from '@/system/components'
 import PopularList from './PopularList'
 
 const Practice = () => {

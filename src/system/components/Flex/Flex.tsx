@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { PolymorphicRef } from '@/design/types/Polymorphic'
+import { PolymorphicRef } from '@/system'
 import { Box } from '..'
 import {
   responsiveProperties,
