@@ -28,7 +28,6 @@ export const Flex: FlexComponent = forwardRef(
     const ElementType: React.ElementType = as || 'div'
     return (
       <Box<typeof ElementType, Props>
-        as={as}
         display="flex"
         ref={ref}
         flexDirection={direction}

@@ -5,7 +5,8 @@ import { Box, BoxProps } from '..'
 import * as styles from './typography.css'
 
 interface Props {
-  children: ReactNode
+  text?: string
+  children?: ReactNode
   as: 'h1' | 'h2' | 'h3' | 'h4'
 }
 
@@ -17,7 +18,7 @@ type HeadingComponent = <C extends React.ElementType = 'h2'>(
 
 export const Heading: HeadingComponent = forwardRef(
   <C extends React.ElementType = 'h1'>(
-    { as, children, ...restProps }: HeadingProps<C>,
+    { as, text, children, ...restProps }: HeadingProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     const headingClass = styles.HeadingStyle({ as })
@@ -30,6 +31,7 @@ export const Heading: HeadingComponent = forwardRef(
         ref={ref}
         {...restProps}
       >
+        {text}
         {children}
       </Box>
     )

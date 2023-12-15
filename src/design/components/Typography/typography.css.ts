@@ -25,6 +25,9 @@ export const HeadingStyle = recipe({
       }),
     },
   },
+  defaultVariants: {
+    as: 'h2',
+  },
 })
 
 // FIXME: change later
@@ -33,11 +36,14 @@ export const TextStyle = recipe({
   variants: {
     variant: {
       solid: sprinkles({
-        background: { lightMode: 'yellow', darkMode: 'gray100' },
-        color: { lightMode: 'white', darkMode: 'gray900' },
+        background: 'yellow',
+        paddingY: 'xxxlarge',
+        // background: { lightMode: 'yellow', darkMode: 'gray100' },
+        // color: { lightMode: 'white', darkMode: 'gray900' },
       }),
       transparent: sprinkles({
-        color: { lightMode: 'coolGray900', darkMode: 'gray100' },
+        color: 'teal200',
+        // color: { lightMode: 'coolGray900', darkMode: 'gray100' },
       }),
     },
   },

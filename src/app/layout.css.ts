@@ -6,9 +6,15 @@ export const BodyStyle = style([
     background: 'primary',
   }),
   {
-    height: '100vh',
     margin: 0,
+    boxSizing: 'border-box',
   },
+])
+
+export const ContainerStyle = style([
+  sprinkles({
+    background: 'red',
+  }),
 ])
 
 export const MainStyle = style([
@@ -37,9 +43,6 @@ export const MainStyle = style([
       desktop: 'xlarge',
     },
   }),
-  {
-    height: '100%',
-  },
 ])
 
 export const SectionStyle = style([
@@ -51,6 +54,6 @@ export const SectionStyle = style([
     },
   }),
   {
-    height: '100%', // h-full
+    height: '100vh', // h-full
   },
 ])

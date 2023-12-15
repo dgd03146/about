@@ -2,7 +2,7 @@ import { calc } from '@vanilla-extract/css-utils'
 import {
   defineProperties,
   createSprinkles,
-  ConditionalValue,
+  // ConditionalValue,
 } from '@vanilla-extract/sprinkles'
 
 import { vars } from '../theme.css'
@@ -63,8 +63,8 @@ export const responsiveProperties = defineProperties({
     },
     gridColumn: {
       desktop: '1 / 13',
-      laptop: '1/9',
-      mobile: '1/7',
+      laptop: '1 / 9',
+      mobile: '1 / 7',
     },
     gridColumnGap: ['8px', '16px', '24px', '32px', '40px'],
     width: vars.contentWidth,
@@ -85,20 +85,15 @@ export const responsiveProperties = defineProperties({
   },
 })
 
-export type ResponsiveValue<Value extends string | number> = ConditionalValue<
-  typeof responsiveProperties,
-  Value
->
-
 export const lightMode = 'light'
 export const darkMode = 'dark'
 
 const colorProperties = defineProperties({
-  conditions: {
-    lightMode: {},
-    darkMode: { selector: `.${darkMode} &` },
-  },
-  defaultCondition: 'lightMode',
+  // conditions: {
+  //   lightMode: {},
+  //   darkMode: { selector: `.${darkMode} &` },
+  // },
+  // defaultCondition: 'lightMode',
   properties: {
     background: vars.palette,
     color: vars.palette,
@@ -122,7 +117,7 @@ export const unresponsiveProperties = defineProperties({
     flexShrink: [0],
     flexGrow: [0, 1],
     zIndex: [-1, 0, 1],
-
+    border: ['none'],
     borderRadius: vars.border.radius,
     cursor: ['pointer'],
   },

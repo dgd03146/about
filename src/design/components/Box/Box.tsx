@@ -41,6 +41,7 @@ export const Box: BoxComponent = forwardRef(
   <C extends React.ElementType = 'div', ExtraProps = {}>(
     {
       as,
+      className,
       padding,
       paddingX,
       paddingY,
@@ -83,16 +84,18 @@ export const Box: BoxComponent = forwardRef(
       overflow,
       gridTemplateColumns,
       gridColumnGap,
-      className,
+      fontSize,
+      fontWeight,
       ...restProps
     }: BoxProps<C, ExtraProps>,
     ref?: PolymorphicRef<C>,
   ) => {
     const component = as || 'div'
+    console.log('🚀 ~ file: Box.tsx:94 ~ component:', component)
 
     const atomClasses = classnames(
+      // resetStyles.base,
       className,
-      resetStyles.base,
       resetStyles.element[component as keyof typeof resetStyles.element],
       sprinkles({
         padding,
@@ -137,8 +140,11 @@ export const Box: BoxComponent = forwardRef(
         overflow,
         gridTemplateColumns,
         gridColumnGap,
+        fontSize,
+        fontWeight,
       }),
     )
+    console.log('🚀 ~ file: Box.tsx:146 ~ atomClasses:', atomClasses)
 
     return createElement(component, {
       className: atomClasses,

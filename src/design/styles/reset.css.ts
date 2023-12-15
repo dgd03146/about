@@ -12,9 +12,9 @@ export const base = style({
 })
 
 export const button = style({
-  background: 0,
-  border: 0,
-  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+  // background: 0,
+  // border: 0,
+  // WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 })
 
 // HTML5 display-role reset for older browsers

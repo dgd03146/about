@@ -14,16 +14,18 @@ export const buttonStyle = recipe({
       mobile: 'large',
       tablet: 'xlarge',
     },
+    border: 'none',
     borderRadius: 'large',
   }),
   variants: {
     variant: {
       solid: sprinkles({
-        background: { lightMode: 'yellow', darkMode: 'gray100' },
-        color: { lightMode: 'white', darkMode: 'gray900' },
+        background: 'pink600',
+        color: 'white',
       }),
       transparent: sprinkles({
-        color: { lightMode: 'coolGray900', darkMode: 'gray100' },
+        color: 'gray100',
+        background: 'blue500',
       }),
     },
   },
