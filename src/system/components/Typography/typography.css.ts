@@ -4,24 +4,26 @@ import { sprinkles } from '@/system'
 
 export const HeadingStyle = recipe({
   base: sprinkles({
-    paddingBottom: 'medium',
+    // paddingBottom: 'medium',
     fontWeight: 'semibold',
+    display: 'block',
+    margin: 'none',
   }),
   variants: {
     as: {
       h1: sprinkles({
-        fontSize: 'xxxlarge',
+        fontSize: '3xl',
         fontWeight: 'bold',
       }),
       h2: sprinkles({
-        fontSize: 'xxlarge',
+        fontSize: '2xl',
         fontWeight: 'bold',
       }),
       h3: sprinkles({
-        fontSize: 'xlarge',
+        fontSize: 'xl',
       }),
       h4: sprinkles({
-        fontSize: 'large',
+        fontSize: 'lg',
       }),
     },
   },

@@ -1,10 +1,10 @@
 import { Flex, Heading } from '@/system/components'
+import { HeaderStyle } from './Header.css'
 
 export const Header = () => {
   return (
-    <Flex as="header">
-      <Heading as="h2" text="GEOJUNG" />
-      <Heading as="h2" text="GEOJUNG" />
+    <Flex as="header" alignItems="center" className={HeaderStyle}>
+      <Heading as="h1" text="Jung" />
     </Flex>
   )
 }

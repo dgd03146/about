@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { PolymorphicRef } from '@/system'
-import { vars } from '@/system/theme.css'
+import { vars } from '@/system/styles/theme.css'
 import { Box, BoxProps } from '../Box/Box'
 
 type Props = {

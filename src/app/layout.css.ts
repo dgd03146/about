@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css'
+import { calc } from '@vanilla-extract/css-utils'
 import { sprinkles } from '@/system'
 
 export const BodyStyle = style([
@@ -9,12 +10,6 @@ export const BodyStyle = style([
     margin: 0,
     boxSizing: 'border-box',
   },
-])
-
-export const ContainerStyle = style([
-  sprinkles({
-    background: 'red',
-  }),
 ])
 
 export const MainStyle = style([
@@ -43,6 +38,9 @@ export const MainStyle = style([
       desktop: 'xlarge',
     },
   }),
+  {
+    height: calc.subtract('100vh', '140px'),
+  },
 ])
 
 export const SectionStyle = style([
@@ -53,7 +51,5 @@ export const SectionStyle = style([
       mobile: 'mobile',
     },
   }),
-  {
-    height: '100vh', // h-full
-  },
+  { height: '100%' },
 ])

@@ -1,4 +1,4 @@
-import { px } from '../theme.css'
+import { px } from '../styles/theme.css'
 
 // break points 정리하기
 

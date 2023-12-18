@@ -42,6 +42,7 @@ export const Box: BoxComponent = forwardRef(
   <C extends React.ElementType = 'div', ExtraProps = {}>(
     {
       as,
+      height,
       className,
       padding,
       paddingX,
@@ -87,6 +88,7 @@ export const Box: BoxComponent = forwardRef(
       gridColumnGap,
       fontSize,
       fontWeight,
+      fontFamily,
       ...restProps
     }: BoxProps<C, ExtraProps>,
     ref?: PolymorphicRef<C>,
@@ -98,6 +100,7 @@ export const Box: BoxComponent = forwardRef(
       className,
       resetStyles.element[component as keyof typeof resetStyles.element],
       sprinkles({
+        height,
         padding,
         paddingX,
         paddingY,

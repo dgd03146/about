@@ -7,7 +7,8 @@ export const px = (value: string | number) => `${value}px`
 const tailwindPalette = {
   white: '#fff',
   black: '#0e0e10',
-  primary: '#F0DC28',
+  primary: '#F4C500',
+  // primary: '#F0DC28',
   secondary: '#0F64CD',
 
   red: colors.red['500'],
@@ -81,6 +82,9 @@ const tailwindPalette = {
 
 export const vars = createGlobalTheme(':root', {
   fonts: {
+    // kor: `var(--font-noto-sans-kor)`,
+    en: `var(--font-inter)`,
+    hero: `var(--font-rubik)`,
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
     heading:
       '"DM Sans", "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
@@ -99,6 +103,7 @@ export const vars = createGlobalTheme(':root', {
     xxxlarge: px(24 * grid),
     auto: 'auto',
   },
+
   contentWidth: {
     xsmall: px(360), // mobile
     small: px(600), // tablet
@@ -109,16 +114,21 @@ export const vars = createGlobalTheme(':root', {
     full: '100%',
   },
   fontSizes: {
-    xsmall: px(12),
-    small: px(14),
-    medium: px(16),
-    large: px(18),
-    xlarge: px(20),
-    xxlarge: px(24),
-    xxxlarge: px(30),
-    xxxxlarge: px(36),
-    xxxxxlarge: px(48),
+    xs: px(12),
+    sm: px(14),
+    base: px(16),
+    lg: px(18),
+    xl: px(20),
+    '2xl': px(24),
+    '3xl': px(30),
+    '4xl': px(36),
+    '5xl': px(48),
+    '6xl': px(60),
+    '7xl': px(72),
+    '8xl': px(96),
+    '9xl': px(128),
   },
+
   fontWeight: {
     normal: '400',
     semibold: '500',

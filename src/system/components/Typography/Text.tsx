@@ -8,6 +8,7 @@ interface Props {
   text?: string
   children?: ReactNode
   variant?: 'solid' | 'transparent'
+  display?: 'block' | 'inline' | 'inline-block' | 'flex' | 'grid'
   as?: 'p' | 'span'
 }
 
@@ -18,17 +19,17 @@ type TextComponent = <C extends ElementType = 'p'>(
 ) => ReactNode | null
 
 export const Text: TextComponent = forwardRef(
-  <C extends React.ElementType = 'h1'>(
-    { as, text, variant, children }: TextProps<C>,
+  <C extends React.ElementType = 'p'>(
+    { as, text, display, variant, children }: TextProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     const ComponentType: ElementType = as || 'p'
     const TextClass = TextStyle({ variant })
-
+    const textDisplay = display || 'block'
     return (
       <Box<typeof ComponentType, Props>
         as={as}
-        display="block"
+        display={textDisplay}
         ref={ref}
         className={TextClass}
       >

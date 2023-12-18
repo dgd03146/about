@@ -1,5 +1,15 @@
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import {
+  Inter,
+  Black_Ops_One,
+  Rubik_Puddles,
+  Rubik_Bubbles,
+  Rubik_Glitch,
+  Rubik_Vinyl,
+  Rubik_80s_Fade,
+  Rubik_Dirt,
+  Rubik_Storm,
+} from 'next/font/google'
 import { Header } from '@/layouts'
 import { Grid, Container } from '@/system/components'
 import * as S from './layout.css'
@@ -7,7 +17,18 @@ import * as S from './layout.css'
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  display: 'swap',
+  variable: '--font-inter',
+  subsets: ['latin'],
+})
+
+const rubik = Black_Ops_One({
+  display: 'swap',
+  weight: '400',
+  variable: '--font-rubik',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -23,10 +44,10 @@ export default function RootLayout({
     <html lang="en">
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
-      <body className={`${inter.className} ${S.BodyStyle}`}>
+      <body className={`${inter.className} ${rubik.className} ${S.BodyStyle}`}>
         <Header />
-        <Container maxWidth="full" centerContent className={S.ContainerStyle}>
-          <Grid as="main" background="blue300" className={S.MainStyle}>
+        <Container maxWidth="full" centerContent>
+          <Grid as="main" className={S.MainStyle}>
             <Grid as="section" className={S.SectionStyle}>
               {children}
             </Grid>

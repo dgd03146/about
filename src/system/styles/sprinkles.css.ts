@@ -5,8 +5,8 @@ import {
   // ConditionalValue,
 } from '@vanilla-extract/sprinkles'
 
-import { vars } from '../theme.css'
 import { breakpoints } from '../tokens/breakPoints'
+import { vars } from './theme.css'
 
 const space = vars.spacing
 export type Space = keyof typeof space
@@ -68,6 +68,7 @@ export const responsiveProperties = defineProperties({
     },
     gridColumnGap: ['8px', '16px', '24px', '32px', '40px'],
     width: vars.contentWidth,
+    height: vars.spacing,
     minWidth: vars.contentWidth,
     maxWidth: vars.contentWidth,
     transition: {
@@ -104,6 +105,7 @@ export const textProperties = defineProperties({
   properties: {
     fontWeight: vars.fontWeight,
     fontSize: vars.fontSizes,
+    fontFamily: vars.fonts,
   },
 })
 
