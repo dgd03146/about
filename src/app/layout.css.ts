@@ -1,15 +1,21 @@
-import { style } from '@vanilla-extract/css'
+import { style, globalStyle } from '@vanilla-extract/css'
 import { calc } from '@vanilla-extract/css-utils'
 import { sprinkles } from '@/system'
+
+globalStyle('a', {
+  textDecoration: 'none',
+  color: 'black',
+})
+
+globalStyle('body', {
+  margin: 0,
+  boxSizing: 'border-box',
+})
 
 export const BodyStyle = style([
   sprinkles({
     background: 'primary',
   }),
-  {
-    margin: 0,
-    boxSizing: 'border-box',
-  },
 ])
 
 export const MainStyle = style([

@@ -61,10 +61,15 @@ const select = style({
   },
 })
 
+const a = style({
+  textDecoration: 'none',
+})
+
 export const element = {
   article: block,
   aside: block,
   button,
+  a,
   details: block,
   figcaption: block,
   figure: block,
