@@ -1,15 +1,5 @@
 import { Metadata } from 'next'
-import {
-  Inter,
-  Black_Ops_One,
-  Rubik_Puddles,
-  Rubik_Bubbles,
-  Rubik_Glitch,
-  Rubik_Vinyl,
-  Rubik_80s_Fade,
-  Rubik_Dirt,
-  Rubik_Storm,
-} from 'next/font/google'
+import { Inter, Black_Ops_One } from 'next/font/google'
 import { Header } from '@/layouts'
 import { Grid, Container } from '@/system/components'
 import * as S from './layout.css'
