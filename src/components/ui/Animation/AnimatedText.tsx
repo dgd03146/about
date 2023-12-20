@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { Variant, motion } from 'framer-motion'
 import { Heading } from '@/system/components'
 import { ensureArray } from '@/utils'
-import { AnimatedLine } from './AnimationLine'
+import { AnimatedLine } from './AnimatedLine'
 import { useInViewAnimation } from './hooks/useInviewAnimation'
 
 type AnimatedTextProps = {
@@ -18,7 +18,7 @@ type AnimatedTextProps = {
   }
 }
 
-const defaultAnimations = {
+export const defaultAnimations = {
   hidden: {
     opacity: 0,
     y: 20,

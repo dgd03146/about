@@ -4,14 +4,16 @@ import colors from 'tailwindcss/colors'
 const grid = 4
 export const px = (value: string | number) => `${value}px`
 
-const tailwindPalette = {
+export const tailwindPalette = {
   white: '#fff',
   black: '#0e0e10',
   primary: '#F4C500',
   // primary: '#F0DC28',
-  secondary: '#0F64CD',
-
-  red: colors.red['500'],
+  blue: '#0F64CD',
+  green: '#004526',
+  purple: '#800080',
+  transparent: 'transparent',
+  red: '#B80F0A',
   yellow: colors.yellow['300'],
   green50: colors.emerald['50'],
   green200: colors.emerald['200'],
@@ -102,6 +104,9 @@ export const vars = createGlobalTheme(':root', {
     xxlarge: px(12 * grid),
     xxxlarge: px(24 * grid),
     auto: 'auto',
+    full: '100%',
+    'h-screen': '100vh',
+    'w-screen': '100vw',
   },
 
   contentWidth: {
@@ -112,6 +117,8 @@ export const vars = createGlobalTheme(':root', {
     xlarge: px(1200), // desktop
     xxlarge: px(1920), // tv
     full: '100%',
+    'h-screen': '100vh',
+    'w-screen': '100vw',
   },
   fontSizes: {
     xs: px(12),

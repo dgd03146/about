@@ -1,8 +1,8 @@
 'use client'
 
 import { Container, Flex } from '@/system/components'
-import { AnimatedText } from './Animation'
 import * as S from './Home.css'
+import { AnimatedText } from './ui'
 
 export const Home = () => {
   return (

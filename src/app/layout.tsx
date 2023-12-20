@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Inter, Black_Ops_One } from 'next/font/google'
 // import localFont from 'next/font/local'
-import { Header } from '@/layouts'
+import { Navbar } from '@/components'
 import { Grid, Container } from '@/system/components'
 import * as S from './layout.css'
 
@@ -36,7 +36,7 @@ export default function RootLayout({
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
       <body className={`${inter.className} ${rubik.className} ${S.BodyStyle} `}>
-        <Header />
+        <Navbar />
         <Container maxWidth="full" centerContent>
           <Grid as="main" className={S.MainStyle}>
             <Grid as="section" className={S.SectionStyle}>
@@ -44,6 +44,7 @@ export default function RootLayout({
             </Grid>
           </Grid>
         </Container>
+        <div id="portal" />
       </body>
       {/* </ThemeProviders> */}
     </html>

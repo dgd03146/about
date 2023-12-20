@@ -29,7 +29,9 @@ export const AnimatedLine = ({ line, animation }: AnimatedLineProps) => {
                   'scale3D(.9,1.05,1)',
                   'scale3D(1,1,1)',
                 ],
-                color: '#FF0000',
+
+                color: 'white',
+                // color: '#B80F0A',
                 transition: {
                   times: [0, 0.4, 0.6, 0.7, 0.8, 0.9],
                   duration: 1,

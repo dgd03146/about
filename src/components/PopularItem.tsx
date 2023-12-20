@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@/design/components'
+import { Box } from '@/system/components'
 import { TPopularPost } from './PopularList'
 
 const PopularItem = ({ id, firstName, lastName }: TPopularPost) => {

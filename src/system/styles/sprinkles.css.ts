@@ -41,7 +41,14 @@ export const responsiveProperties = defineProperties({
     position: ['absolute', 'relative', 'fixed'],
     display: ['none', 'block', 'inline', 'inline-block', 'flex', 'grid'],
     alignItems: ['stretch', 'flex-start', 'center', 'flex-end'],
-    justifyContent: ['flex-start', 'center', 'flex-end', 'space-between'],
+    justifyContent: [
+      'flex-start',
+      'center',
+      'flex-end',
+      'space-between',
+      'space-around',
+      'space-evenly',
+    ],
     flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
     paddingTop: space,
     paddingBottom: space,
@@ -60,6 +67,7 @@ export const responsiveProperties = defineProperties({
       tablet: 'repeat(4, 1fr)',
       laptop: 'repeat(8, 1fr)',
       desktop: 'repeat(12, 1fr)',
+      route: 'repeat(5, 1fr)',
     },
     gridColumn: {
       desktop: '1 / 13',

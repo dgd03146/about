@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
 
-export const HeaderStyle = style([
+export const NavbarStyle = style([
   sprinkles({
     display: 'flex',
     marginX: 'xxxlarge',

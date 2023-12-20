@@ -27,6 +27,11 @@ export const buttonStyle = recipe({
         color: 'gray100',
         background: 'blue500',
       }),
+      basic: sprinkles({
+        background: 'transparent',
+        paddingY: 'none',
+        paddingX: 'none',
+      }),
     },
   },
 })

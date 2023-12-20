@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { Button } from '@/design/components/Button'
-import { Flex } from '@/design/components/Flex/Flex'
-import { List } from '@/design/components/List/List'
+import { Button, Flex } from '@/system/components'
+import { List } from '@/system/components/List'
 import PopularItem from './PopularItem'
 
 const popularPost = [

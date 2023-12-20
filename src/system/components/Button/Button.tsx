@@ -12,7 +12,7 @@ import * as styles from './Button.css'
 interface Props
   extends PropsWithChildren,
     ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'solid' | 'transparent'
+  variant?: 'solid' | 'transparent' | 'basic'
   text?: string
   icon?: ReactNode
   href?: string
@@ -23,7 +23,7 @@ type ButtonComponent = (props: ButtonProps) => React.ReactNode | null
 
 export const Button: ButtonComponent = forwardRef(
   (
-    { href, variant = 'solid', icon, text, children }: ButtonProps,
+    { href, variant, icon, text, children, ...restProps }: ButtonProps,
     ref?: PolymorphicRef<'button'>,
   ) => {
     const buttonClass = styles.buttonStyle({ variant })
@@ -45,7 +45,7 @@ export const Button: ButtonComponent = forwardRef(
         {content}
       </Link>
     ) : (
-      <Box as="button" className={buttonClass} ref={ref}>
+      <Box as="button" className={buttonClass} ref={ref} {...restProps}>
         {content}
       </Box>
     )
