@@ -5,6 +5,7 @@ import { Variant, motion } from 'framer-motion'
 import { Heading } from '@/system/components'
 import { ensureArray } from '@/utils'
 import { AnimatedLine } from './AnimatedLine'
+import * as S from './AnimatedText.css'
 import { useInViewAnimation } from './hooks/useInviewAnimation'
 
 type AnimatedTextProps = {
@@ -66,7 +67,7 @@ export const AnimatedText = ({
         }}
         transition={{ duration: 2, delay: 0 }}
       >
-        <Heading as="h1" fontSize="9xl">
+        <Heading as="h1" className={S.TitleStyle}>
           {titleArray.map((line, lineIndex) => (
             <AnimatedLine
               key={`${line}-${lineIndex}`}
@@ -76,7 +77,7 @@ export const AnimatedText = ({
           ))}
         </Heading>
       </motion.div>
-      <Heading as="h1" fontSize="6xl">
+      <Heading as="h1" className={S.SubTitleStyle}>
         <motion.span
           ref={ref}
           initial="hidden"

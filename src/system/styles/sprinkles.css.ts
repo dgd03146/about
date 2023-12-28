@@ -31,6 +31,9 @@ export const responsiveProperties = defineProperties({
   conditions: {
     mobile: { '@media': `screen and (min-width: ${breakpoints.mobile})` },
     tablet: { '@media': `screen and (min-width: ${breakpoints.tablet})` },
+    miniTablet: {
+      '@media': `screen and (min-width: ${breakpoints.miniTablet})`,
+    },
     laptop: { '@media': `screen and (min-width: ${breakpoints.laptop})` },
     desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },
     tv: { '@media': `screen and (min-width: ${breakpoints.tv})` },
@@ -63,18 +66,23 @@ export const responsiveProperties = defineProperties({
     opacity: [0, 1],
     textAlign: ['left', 'center', 'right'],
     gridTemplateColumns: {
-      mobile: 'repeat(2, 1fr)',
-      tablet: 'repeat(4, 1fr)',
-      laptop: 'repeat(8, 1fr)',
-      desktop: 'repeat(12, 1fr)',
-      route: 'repeat(5, 1fr)',
+      '1/2': 'repeat(2, 1fr)',
+      '1/4': 'repeat(4, 1fr)',
+      '1/6': 'repeat(6, 1fr)',
+      '1/8': 'repeat(8, 1fr)',
+      '1/12': 'repeat(12, 1fr)',
+      '1/5': 'repeat(5, 1fr)',
     },
     gridColumn: {
-      desktop: '1 / 13',
-      laptop: '1 / 9',
-      mobile: '1 / 7',
+      '1/2': '1/2',
+      '1/3': '1/3',
+      '1/7': '1 / 7',
+      '1/8': '1/8',
+      '1/9': '1 / 9',
+      '1/13': '1 / 13',
+      auto: 'auto',
     },
-    gridColumnGap: ['8px', '16px', '24px', '32px', '40px'],
+    gridColumnGap: ['8px', '16px', '17px', '20px', '24px', '32px', '40px'],
     width: vars.contentWidth,
     height: vars.spacing,
     minWidth: vars.contentWidth,
@@ -83,6 +91,7 @@ export const responsiveProperties = defineProperties({
       slow: 'transform .3s ease, opacity .3s ease',
       fast: 'transform .15s ease, opacity .15s ease',
     },
+    fontSize: vars.fontSizes,
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -112,7 +121,7 @@ const colorProperties = defineProperties({
 export const textProperties = defineProperties({
   properties: {
     fontWeight: vars.fontWeight,
-    fontSize: vars.fontSizes,
+
     fontFamily: vars.fonts,
   },
 })

@@ -3,9 +3,8 @@ import { sprinkles } from '@/system'
 
 export const NavbarStyle = style([
   sprinkles({
-    display: 'flex',
-    marginX: 'xxxlarge',
-    // FIXME: maxWidth 이름 통일
+    margin: 'auto',
+    marginX: 'large',
   }),
   {
     maxHeight: '140px',

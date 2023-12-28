@@ -31,10 +31,13 @@ export const HamburgerStyle = style([
 export const RoutesStyle = style([
   sprinkles({
     display: 'flex',
-    // flexDirection: 'column',
     height: 'full',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: {
+      mobile: 'column',
+      desktop: 'row',
+    },
   }),
 
   {

@@ -18,28 +18,32 @@ export const BodyStyle = style([
   }),
 ])
 
+export const ContainerStyle = style([
+  sprinkles({
+    paddingX: {
+      mobile: 'large',
+      tablet: 'large',
+      laptop: 'none',
+    },
+  }),
+])
+
 export const MainStyle = style([
   sprinkles({
     gridTemplateColumns: {
-      desktop: 'desktop',
-      laptop: 'laptop',
-      tablet: 'tablet',
-      mobile: 'mobile',
+      desktop: '1/12',
+      laptop: '1/8',
+      tablet: '1/6',
     },
     gridColumnGap: {
       desktop: '24px',
+      laptop: '20px',
       mobile: '16px',
     },
+
     width: {
-      mobile: 'xsmall',
-      tablet: 'small',
-      laptop: 'large',
-      desktop: 'xlarge',
-    },
-    // FIXME: maxWidth 이름 통일
-    maxWidth: {
-      mobile: 'xsmall',
-      tablet: 'small',
+      mobile: 'full',
+      tablet: 'full',
       laptop: 'large',
       desktop: 'xlarge',
     },
@@ -52,9 +56,10 @@ export const MainStyle = style([
 export const SectionStyle = style([
   sprinkles({
     gridColumn: {
-      desktop: 'desktop',
-      laptop: 'laptop',
-      mobile: 'mobile',
+      mobile: '1/7',
+      tablet: '1/7',
+      laptop: '1/9',
+      desktop: '1/13',
     },
   }),
   { height: '100%' },

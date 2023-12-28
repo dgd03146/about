@@ -28,13 +28,13 @@ export const Navbar = () => {
       as="header"
       alignItems="center"
       justifyContent="space-between"
-      className={`${NavbarStyle}`}
+      className={NavbarStyle}
     >
       <Link href="/">
         <Heading as="h1" text="JUNG" fontSize="2xl" className={lot.className} />
       </Link>
       <Button variant="basic" onClick={handleDrawer}>
-        <Heading as="h1" fontSize="2xl">
+        <Heading as="h1" fontSize="2xl" padding="none">
           <HamburgerIcon />
         </Heading>
       </Button>

@@ -36,7 +36,7 @@ export const NavLink = ({ title, href }: Props) => {
     <Box className={S.NavLinkStyle}>
       <motion.div variants={NavLinkVars}>
         <Link href={href}>
-          <Heading as="h1" fontSize="8xl">
+          <Heading as="h1" className={S.HeaderStyle}>
             {titleArray.map((line, lineIndex) => (
               <AnimatedLine
                 key={`${line}-${lineIndex}`}

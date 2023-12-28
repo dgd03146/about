@@ -5,8 +5,8 @@ import { sprinkles } from '@/system'
 export const ContainerStyle = style([
   sprinkles({}),
   {
-    // margin: 0,
     display: 'flex',
+
     alignItems: 'center',
     width: 'full',
     height: calc.subtract('100%', '140px'),

@@ -6,14 +6,14 @@ export const buttonStyle = recipe({
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
-    paddingY: {
-      mobile: 'medium',
-      tablet: 'large',
-    },
-    paddingX: {
-      mobile: 'large',
-      tablet: 'xlarge',
-    },
+    // paddingY: {
+    //   mobile: 'medium',
+    //   tablet: 'large',
+    // },
+    // paddingX: {
+    //   mobile: 'large',
+    //   tablet: 'xlarge',
+    // },
     border: 'none',
     borderRadius: 'large',
   }),
@@ -31,6 +31,7 @@ export const buttonStyle = recipe({
         background: 'transparent',
         paddingY: 'none',
         paddingX: 'none',
+        margin: 'none',
       }),
     },
   },

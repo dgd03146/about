@@ -7,3 +7,12 @@ export const NavLinkStyle = style([
     marginX: 'xxlarge',
   }),
 ])
+
+export const HeaderStyle = style([
+  sprinkles({
+    fontSize: {
+      mobile: '4xl',
+      desktop: '6xl',
+    },
+  }),
+])

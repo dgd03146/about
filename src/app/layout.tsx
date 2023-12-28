@@ -37,7 +37,7 @@ export default function RootLayout({
       {/* <Toast /> */}
       <body className={`${inter.className} ${rubik.className} ${S.BodyStyle} `}>
         <Navbar />
-        <Container maxWidth="full" centerContent>
+        <Container maxWidth="full" centerContent className={S.ContainerStyle}>
           <Grid as="main" className={S.MainStyle}>
             <Grid as="section" className={S.SectionStyle}>
               {children}

@@ -110,12 +110,18 @@ export const vars = createGlobalTheme(':root', {
   },
 
   contentWidth: {
-    xsmall: px(360), // mobile
-    small: px(600), // tablet
+    xsmall: px(480), // mobile
+    small: px(768), // tablet
     standard: px(740),
     large: px(1080), // laptop
     xlarge: px(1200), // desktop
     xxlarge: px(1920), // tv
+    'w-1.5': '20%',
+    'w-2/5': '40%',
+    'w-1/2': '50%',
+    'w-3/5': '60%',
+    'w-4/5': '80%',
+    'w-11/12': '92%',
     full: '100%',
     'h-screen': '100vh',
     'w-screen': '100vw',
@@ -134,6 +140,9 @@ export const vars = createGlobalTheme(':root', {
     '7xl': px(72),
     '8xl': px(96),
     '9xl': px(128),
+    '10xl': px(144),
+    '11xl': px(160),
+    '12xl': px(180),
   },
 
   fontWeight: {
