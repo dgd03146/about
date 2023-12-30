@@ -122,7 +122,7 @@ export const textProperties = defineProperties({
   properties: {
     fontWeight: vars.fontWeight,
 
-    fontFamily: vars.fonts,
+    fontFamily: vars.font,
   },
 })
 

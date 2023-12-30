@@ -83,10 +83,10 @@ export const tailwindPalette = {
 }
 
 export const vars = createGlobalTheme(':root', {
-  fonts: {
+  font: {
     // kor: `var(--font-noto-sans-kor)`,
-    en: `var(--font-inter)`,
-    hero: `var(--font-rubik)`,
+    en: 'var(--font-inter)',
+    hero: 'var(--font-rubik)',
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
     heading:
       '"DM Sans", "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',

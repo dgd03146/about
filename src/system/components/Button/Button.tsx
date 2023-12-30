@@ -23,7 +23,14 @@ type ButtonComponent = (props: ButtonProps) => React.ReactNode | null
 
 export const Button: ButtonComponent = forwardRef(
   (
-    { href, variant, icon, text, children, ...restProps }: ButtonProps,
+    {
+      href,
+      variant = 'basic',
+      icon,
+      text,
+      children,
+      ...restProps
+    }: ButtonProps,
     ref?: PolymorphicRef<'button'>,
   ) => {
     const buttonClass = styles.buttonStyle({ variant })

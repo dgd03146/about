@@ -7,7 +7,7 @@ import { AnimatedText } from './ui'
 export const Home = () => {
   return (
     <Container as="section" className={S.ContainerStyle}>
-      <Flex flexDirection="column" width="full" fontFamily="hero">
+      <Flex flexDirection="column" width="full">
         <AnimatedText
           title="GEOJUNG IM"
           text={[

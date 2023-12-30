@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Inter, Black_Ops_One } from 'next/font/google'
+import { Inter, Black_Ops_One, Noto_Sans_JP } from 'next/font/google'
 // import localFont from 'next/font/local'
 import { Navbar } from '@/components'
 import { Grid, Container } from '@/system/components'
@@ -7,6 +7,12 @@ import * as S from './layout.css'
 
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
+
+const noto = Noto_Sans_JP({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-noto-sans-jp',
+})
 
 const inter = Inter({
   display: 'swap',
@@ -32,10 +38,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${rubik.variable} ${noto.variable}`}
+    >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
-      <body className={`${inter.className} ${rubik.className} ${S.BodyStyle} `}>
+      <body className={S.BodyStyle}>
         <Navbar />
         <Container maxWidth="full" centerContent className={S.ContainerStyle}>
           <Grid as="main" className={S.MainStyle}>

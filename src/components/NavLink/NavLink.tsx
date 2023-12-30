@@ -1,9 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { Box, Heading } from '@/system/components'
-import { ensureArray } from '@/utils'
 
+import { useRouter } from 'next/navigation'
+import { Box, Button, Heading } from '@/system/components'
+import { ensureArray } from '@/utils'
 import { AnimatedLine } from '../ui'
 import { defaultAnimations } from '../ui/Animation/AnimatedText'
 import * as S from './NavLink.css'
@@ -11,31 +11,22 @@ import * as S from './NavLink.css'
 type Props = {
   title: string
   href: string
+  toggle: () => void
 }
 
-const NavLinkVars = {
-  initial: {
-    y: '30vh',
-    transition: {
-      duration: 0.5,
-      ease: [0.37, 0, 0.63, 1],
-    },
-  },
-  open: {
-    y: 0,
-    transition: {
-      ease: [0, 0.55, 0.45, 1],
-      duration: 0.7,
-    },
-  },
-}
-
-export const NavLink = ({ title, href }: Props) => {
+export const NavLink = ({ title, href, toggle }: Props) => {
+  const router = useRouter()
   const titleArray = ensureArray(title)
+
+  const handleRoute = () => {
+    router.push(href)
+    toggle()
+  }
+
   return (
     <Box className={S.NavLinkStyle}>
-      <motion.div variants={NavLinkVars}>
-        <Link href={href}>
+      <motion.div variants={S.NavLinkVars}>
+        <Button onClick={handleRoute}>
           <Heading as="h1" className={S.HeaderStyle}>
             {titleArray.map((line, lineIndex) => (
               <AnimatedLine
@@ -45,7 +36,7 @@ export const NavLink = ({ title, href }: Props) => {
               />
             ))}
           </Heading>
-        </Link>
+        </Button>
       </motion.div>
     </Box>
   )

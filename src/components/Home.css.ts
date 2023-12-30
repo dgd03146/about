@@ -3,10 +3,11 @@ import { calc } from '@vanilla-extract/css-utils'
 import { sprinkles } from '@/system'
 
 export const ContainerStyle = style([
-  sprinkles({}),
+  sprinkles({
+    fontFamily: 'hero',
+  }),
   {
     display: 'flex',
-
     alignItems: 'center',
     width: 'full',
     height: calc.subtract('100%', '140px'),

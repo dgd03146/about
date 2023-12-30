@@ -17,10 +17,10 @@ const lot = localFont({
 })
 
 export const Navbar = () => {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleDrawer = () => {
-    setOpen((prev) => !prev)
+    setIsOpen((prev) => !prev)
   }
 
   return (
