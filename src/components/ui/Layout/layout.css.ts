@@ -1,4 +1,4 @@
-import { style, globalStyle } from '@vanilla-extract/css'
+import { style, globalStyle, createVar } from '@vanilla-extract/css'
 import { calc } from '@vanilla-extract/css-utils'
 import { sprinkles } from '@/system'
 
@@ -12,11 +12,12 @@ globalStyle('body', {
   boxSizing: 'border-box',
 })
 
-export const BodyStyle = style([
-  sprinkles({
-    background: 'primary',
-  }),
-])
+export const brandColor = createVar()
+export const textColor = createVar()
+
+export const container = style({
+  background: brandColor,
+})
 
 export const ContainerStyle = style([
   sprinkles({

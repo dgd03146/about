@@ -1,17 +1,12 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
 import colors from 'tailwindcss/colors'
+import { customColors } from '../tokens/colors'
 
 const grid = 4
 export const px = (value: string | number) => `${value}px`
 
 export const tailwindPalette = {
-  white: '#fff',
-  black: '#0e0e10',
-  primary: '#F4C500',
-  // primary: '#F0DC28',
-  blue: '#0F64CD',
-  green: '#004526',
-  purple: '#800080',
+  ...customColors,
   transparent: 'transparent',
   red: '#B80F0A',
   yellow: colors.yellow['300'],

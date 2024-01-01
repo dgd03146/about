@@ -2,7 +2,7 @@ import { ReactNode, forwardRef } from 'react'
 import { PolymorphicRef } from '@/system'
 import { Box, BoxProps } from '..'
 
-import * as styles from './typography.css'
+import * as S from './typography.css'
 
 interface Props {
   text?: string
@@ -21,7 +21,7 @@ export const Heading: HeadingComponent = forwardRef(
     { as, text, children, ...restProps }: HeadingProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
-    const headingClass = styles.HeadingStyle({ as })
+    const headingClass = S.HeadingStyle({ as })
     const ElementType: React.ElementType = as || 'h2'
 
     return (

@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
 import { Inter, Black_Ops_One, Noto_Sans_JP } from 'next/font/google'
-// import localFont from 'next/font/local'
-import { Navbar } from '@/components'
-import { Grid, Container } from '@/system/components'
-import * as S from './layout.css'
+// // import localFont from 'next/font/local'
+// import { Navbar, Transition } from '@/components'
+
+// import { Grid, Container } from '@/system/components'
+// import * as S from '../components/ui/Layout/Layout.css'
+import { Layout } from '@/components/ui/Layout/Layout'
 
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
@@ -44,17 +46,11 @@ export default function RootLayout({
     >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
-      <body className={S.BodyStyle}>
-        <Navbar />
-        <Container maxWidth="full" centerContent className={S.ContainerStyle}>
-          <Grid as="main" className={S.MainStyle}>
-            <Grid as="section" className={S.SectionStyle}>
-              {children}
-            </Grid>
-          </Grid>
-        </Container>
-        <div id="portal" />
+
+      <body>
+        <Layout>{children}</Layout>
       </body>
+
       {/* </ThemeProviders> */}
     </html>
   )
