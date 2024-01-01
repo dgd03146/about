@@ -5,7 +5,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Home from '@/app/page'
+import HomePage from '@/app/page'
 
 describe('Home Page', () => {
   // it('Is the Navbar Visible on the Home Page?', () => {
@@ -14,7 +14,7 @@ describe('Home Page', () => {
   // })
 
   it('Can you see the Button on the Home Page?', () => {
-    render(<Home />)
+    render(<HomePage />)
     expect(
       screen.getByRole('button', { name: 'Visit the Github' }),
     ).toBeInTheDocument()

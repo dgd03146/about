@@ -1,11 +1,8 @@
 import React from 'react'
 
+import { Button, Flex } from '@/system/components'
+import { List } from '@/system/components/List'
 import PopularItem from './PopularItem'
-// eslint-disable-next-line import/no-named-as-default
-
-import { Button } from '@/design/components/Button'
-import { Flex } from '@/design/components/Flex/Flex'
-import { List } from '@/design/components/List/List'
 
 const popularPost = [
   { id: '1', firstName: 'John', lastName: 'Doe' },

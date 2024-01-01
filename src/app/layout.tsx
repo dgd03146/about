@@ -1,9 +1,31 @@
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Black_Ops_One, Noto_Sans_JP } from 'next/font/google'
+// import localFont from 'next/font/local'
+import { Navbar } from '@/components'
+import { Grid, Container } from '@/system/components'
+import * as S from './layout.css'
+
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
 
-const inter = Inter({ subsets: ['latin'] })
+const noto = Noto_Sans_JP({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-noto-sans-jp',
+})
+
+const inter = Inter({
+  display: 'swap',
+  variable: '--font-inter',
+  subsets: ['latin'],
+})
+
+const rubik = Black_Ops_One({
+  display: 'swap',
+  weight: '400',
+  variable: '--font-rubik',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,10 +38,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${rubik.variable} ${noto.variable}`}
+    >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
-      <body className={inter.className}>{children}</body>
+      <body className={S.BodyStyle}>
+        <Navbar />
+        <Container maxWidth="full" centerContent className={S.ContainerStyle}>
+          <Grid as="main" className={S.MainStyle}>
+            <Grid as="section" className={S.SectionStyle}>
+              {children}
+            </Grid>
+          </Grid>
+        </Container>
+        <div id="portal" />
+      </body>
       {/* </ThemeProviders> */}
     </html>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
+import { Box } from '@/system/components'
 import { TPopularPost } from './PopularList'
-import { Box } from '@/design/components'
 
 const PopularItem = ({ id, firstName, lastName }: TPopularPost) => {
   return (
