@@ -4,7 +4,6 @@ about: Style for this project
 title: "\U0001F3A8"
 labels: "\U0001F3A8 UI"
 assignees: dgd03146
-
 ---
 
 **Is your feature request related to a problem? Please describe.**

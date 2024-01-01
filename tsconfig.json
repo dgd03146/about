@@ -20,7 +20,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@design/atoms": ["./src/design/atoms/index.ts"],
+      "@design/components": ["./src/design/components/index.ts"],
+      "@design/tokens": ["./src/design/tokens/index.ts"],
+      "@design/theme": ["./src/design/theme/index.ts"]
     }
   },
   "include": [
@@ -32,5 +36,11 @@
     "next.config.js",
     "jest.config.mjs"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".storybook",
+    "storybook-static",
+    "coverage"
+  ]
 }

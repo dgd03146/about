@@ -1,10 +1,9 @@
 ---
-name: "✅ Test request"
+name: '✅ Test request'
 about: Test code for this project
-title: "✅"
-labels: "✅ Test"
+title: '✅'
+labels: '✅ Test'
 assignees: dgd03146
-
 ---
 
 **Is your feature request related to a problem? Please describe.**
