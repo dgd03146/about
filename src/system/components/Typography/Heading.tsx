@@ -1,5 +1,6 @@
 import { ReactNode, forwardRef } from 'react'
 import { PolymorphicRef } from '@/system'
+
 import { Box, BoxProps } from '..'
 
 import * as S from './typography.css'

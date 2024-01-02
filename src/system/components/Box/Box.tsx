@@ -89,6 +89,8 @@ export const Box: BoxComponent = forwardRef(
       fontSize,
       fontWeight,
       fontFamily,
+      gapX,
+      gapY,
       ...restProps
     }: BoxProps<C, ExtraProps>,
     ref?: PolymorphicRef<C>,
@@ -145,6 +147,9 @@ export const Box: BoxComponent = forwardRef(
         gridColumnGap,
         fontSize,
         fontWeight,
+        fontFamily,
+        gapX,
+        gapY,
       }),
     )
 

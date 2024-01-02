@@ -9,6 +9,7 @@ globalStyle('a', {
 
 globalStyle('body', {
   margin: 0,
+
   boxSizing: 'border-box',
 })
 
@@ -21,16 +22,17 @@ export const container = style({
 
 export const ContainerStyle = style([
   sprinkles({
-    paddingX: {
-      mobile: 'large',
-      tablet: 'large',
-      laptop: 'none',
-    },
+    // paddingX: {
+    //   mobile: 'large',
+    //   tablet: 'large',
+    //   laptop: 'none',
+    // },
   }),
 ])
 
 export const MainStyle = style([
   sprinkles({
+    maxWidth: 'w-11/12',
     gridTemplateColumns: {
       desktop: '1/12',
       laptop: '1/8',

@@ -82,6 +82,8 @@ export const responsiveProperties = defineProperties({
       '1/13': '1 / 13',
       auto: 'auto',
     },
+    'column-gap': space,
+    'row-gap': space,
     gridColumnGap: ['8px', '16px', '17px', '20px', '24px', '32px', '40px'],
     width: vars.contentWidth,
     height: vars.spacing,
@@ -100,6 +102,8 @@ export const responsiveProperties = defineProperties({
     margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
     marginX: ['marginLeft', 'marginRight'],
     marginY: ['marginTop', 'marginBottom'],
+    gapX: ['column-gap'],
+    gapY: ['row-gap'],
   },
 })
 

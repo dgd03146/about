@@ -111,7 +111,7 @@ export const vars = createGlobalTheme(':root', {
     large: px(1080), // laptop
     xlarge: px(1200), // desktop
     xxlarge: px(1920), // tv
-    'w-1.5': '20%',
+    'w-1/5': '20%',
     'w-2/5': '40%',
     'w-1/2': '50%',
     'w-3/5': '60%',

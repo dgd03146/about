@@ -38,7 +38,7 @@ export const Navbar = () => {
           <HamburgerIcon />
         </Heading>
       </Button>
-      {isOpen && <Drawer toggle={handleDrawer} />}
+      <Drawer isOpen={isOpen} toggle={handleDrawer} />
     </Flex>
   )
 }
