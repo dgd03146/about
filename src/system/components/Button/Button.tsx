@@ -12,7 +12,7 @@ import * as styles from './Button.css'
 interface Props
   extends PropsWithChildren,
     ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'solid' | 'transparent' | 'basic'
+  variant?: 'solid' | 'transparent' | 'basic' | 'black solid'
   text?: string
   icon?: ReactNode
   href?: string

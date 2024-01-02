@@ -1,4 +1,4 @@
-import { Container, Flex, Stack } from '@/system/components'
+import { Container, Stack } from '@/system/components'
 import { BlogList } from './BlogList'
 import * as S from './BlogList.css'
 import Category from './Category/Category'

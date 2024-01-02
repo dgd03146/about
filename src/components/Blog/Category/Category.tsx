@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Container, Heading, Stack, Flex } from '@/system/components'
+import { Container, Heading, Flex } from '@/system/components'
 
 const category = [
   { title: 'ALL' },

@@ -19,6 +19,12 @@ export const buttonStyle = recipe({
   }),
   variants: {
     variant: {
+      basic: sprinkles({
+        background: 'transparent',
+        paddingY: 'none',
+        paddingX: 'none',
+        margin: 'none',
+      }),
       solid: sprinkles({
         background: 'pink600',
         color: 'white',
@@ -27,11 +33,10 @@ export const buttonStyle = recipe({
         color: 'gray100',
         background: 'blue500',
       }),
-      basic: sprinkles({
-        background: 'transparent',
-        paddingY: 'none',
-        paddingX: 'none',
-        margin: 'none',
+      'black solid': sprinkles({
+        background: 'black',
+        color: 'white',
+        padding: 'small',
       }),
     },
   },

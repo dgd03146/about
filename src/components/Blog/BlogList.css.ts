@@ -17,13 +17,13 @@ export const carousel = style([
 export const innerCarousel = style([
   {
     display: 'flex',
-    columnGap: '40px',
+    columnGap: '20px',
   },
 ])
 
 export const imageWrapper = style([
   {
-    minHeight: '250px',
+    minHeight: '300px',
     minWidth: '250px',
     padding: '40px 0',
   },
