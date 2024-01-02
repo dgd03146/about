@@ -1,9 +1,9 @@
 'use client'
 
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode } from 'react'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { usePathname } from 'next/navigation'
-import { Navbar, Transition } from '@/components'
+import { Navbar } from '@/components'
 import { Container, Grid } from '@/system/components'
 
 import { getColorForPath } from '@/utils/getColorForPath'
