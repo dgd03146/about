@@ -5,10 +5,10 @@ export function getColorForPath(pathname: string) {
     case '/blog':
       return customColors.white
     case '/travel':
-      return 'pink'
+      return customColors.black
     case '/food':
-      return 'green'
+      return customColors.green
     default:
-      return 'yellow' // 기본 색상
+      return customColors.primary // 기본 색상
   }
 }

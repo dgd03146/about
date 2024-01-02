@@ -20,11 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@design/atoms": ["./src/design/atoms/index.ts"],
-      "@design/components": ["./src/design/components/index.ts"],
-      "@design/tokens": ["./src/design/tokens/index.ts"],
-      "@design/theme": ["./src/design/theme/index.ts"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
