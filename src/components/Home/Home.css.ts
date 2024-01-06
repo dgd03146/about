@@ -7,10 +7,12 @@ export const ContainerStyle = style([
     fontFamily: 'hero',
   }),
   {
+    overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
     width: 'full',
-    height: calc.subtract('100%', '140px'),
+    height: calc.subtract('100vh', '280px'),
+    minHeight: '500px',
   },
 ])
 

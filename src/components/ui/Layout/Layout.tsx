@@ -32,8 +32,6 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <Container
-      width="full"
-      height="full"
       className={S.container}
       style={assignInlineVars({
         [S.brandColor]: getColorForPath(pathname),

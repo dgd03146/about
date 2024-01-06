@@ -1,11 +1,6 @@
 import { style } from '@vanilla-extract/css'
-import { calc } from '@vanilla-extract/css-utils'
 
-export const container = style([
-  {
-    height: calc.subtract('100vh', '280px'),
-  },
-])
+import { sprinkles } from '@/system'
 
 export const carousel = style([
   {
@@ -15,32 +10,77 @@ export const carousel = style([
 ])
 
 export const innerCarousel = style([
-  {
+  sprinkles({
     display: 'flex',
+
+    flexDirection: {
+      mobile: 'column',
+      miniTablet: 'row',
+    },
+  }),
+  {
     columnGap: '20px',
+    rowGap: '10px',
   },
 ])
 
-export const imageWrapper = style([
+export const card = style([
   {
-    minHeight: '300px',
-    minWidth: '250px',
-    padding: '40px 0',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    transformStyle: 'preserve-3d',
+    transition: 'all 0.7s ease',
+    color: 'white',
+    ':hover': {
+      transform: 'rotateY(180deg)',
+    },
   },
 ])
 
-export const item = style([
+export const cardContainer = style([
+  sprinkles({
+    position: 'relative',
+
+    minWidth: {
+      mobile: '52',
+      miniTablet: '64',
+      tablet: '64',
+      laptop: '64',
+    },
+    minHeight: {
+      mobile: '72',
+      miniTablet: '96',
+      tablet: '96',
+      laptop: '96',
+    },
+  }),
+])
+
+export const front = style([
   {
+    cursor: 'pointer',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backfaceVisibility: 'hidden',
     pointerEvents: 'none',
-    // minHeight: '40rem',
-    // width: '30rem',
-    // padding: '40px',
   },
 ])
-export const image = style([
+
+export const back = style([
+  {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backfaceVisibility: 'hidden',
+    transform: 'rotateY(180deg)',
+  },
+])
+
+export const frontImage = style([
   {
     width: '100%',
     height: '100%',
-    // borderRadius: '1rem',
   },
 ])

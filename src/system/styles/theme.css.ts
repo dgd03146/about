@@ -8,7 +8,7 @@ export const px = (value: string | number) => `${value}px`
 export const tailwindPalette = {
   ...customColors,
   transparent: 'transparent',
-  red: '#B80F0A',
+
   yellow: colors.yellow['300'],
   green50: colors.emerald['50'],
   green200: colors.emerald['200'],
@@ -77,19 +77,60 @@ export const tailwindPalette = {
   pink900: colors.fuchsia['900'],
 }
 
+const sizeValues = {
+  '0': '0px',
+  '1px': '1px',
+  '0.5': '0.125rem', // 2px
+  '1': '0.25rem', // 4px
+  '1.5': '0.375rem', // 6px
+  '2': '0.5rem', // 8px
+  '2.5': '0.625rem', // 10px
+  '3': '0.75rem', // 12px
+  '3.5': '0.875rem', // 14px
+  '4': '1rem', // 16px
+  '5': '1.25rem', // 20px
+  '6': '1.5rem', // 24px
+  '7': '1.75rem', // 28px
+  '8': '2rem', // 32px
+  '9': '2.25rem', // 36px
+  '10': '2.5rem', // 40px
+  '11': '2.75rem', // 44px
+  '12': '3rem', // 48px
+  '14': '3.5rem', // 56px
+  '16': '4rem', // 64px
+  '20': '5rem', // 80px
+  '24': '6rem', // 96px
+  '28': '7rem', // 112px
+  '32': '8rem', // 128px
+  '36': '9rem', // 144px
+  '40': '10rem', // 160px
+  '44': '11rem', // 176px
+  '48': '12rem', // 192px
+  '52': '13rem', // 208px
+  '56': '14rem', // 224px
+  '60': '15rem', // 240px
+  '64': '16rem', // 256px
+  '72': '18rem', // 288px
+  '76': '19rem', // 304px
+  '80': '20rem', // 320px
+  '96': '24rem', // 384px
+}
+
 export const vars = createGlobalTheme(':root', {
   font: {
     // kor: `var(--font-noto-sans-kor)`,
     en: 'var(--font-inter)',
     hero: 'var(--font-rubik)',
+    dm: 'var(--font-dm-sans)',
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
-    heading:
-      '"DM Sans", "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
     body: '-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif',
     code: 'ml, "Roboto Mono", Menlo, monospace',
+    onest: 'var(--font-onest)',
+    playfair: 'var(--font-playfair)',
   },
   grid: px(grid),
   spacing: {
+    ...sizeValues,
     none: '0',
     xsmall: px(1 * grid),
     small: px(2 * grid),
@@ -100,12 +141,13 @@ export const vars = createGlobalTheme(':root', {
     xxxlarge: px(24 * grid),
     auto: 'auto',
     full: '100%',
+    '70px': '70px',
     'h-screen': '100vh',
     'w-screen': '100vw',
   },
 
   contentWidth: {
-    xsmall: px(480), // mobile
+    xsmall: px(375), // mobile
     small: px(768), // tablet
     standard: px(740),
     large: px(1080), // laptop
@@ -118,8 +160,15 @@ export const vars = createGlobalTheme(':root', {
     'w-4/5': '80%',
     'w-11/12': '92%',
     full: '100%',
+
     'h-screen': '100vh',
     'w-screen': '100vw',
+    auto: 'auto',
+    'fit-content': 'fit-content',
+    'max-content': 'max-content',
+    'min-content': 'min-content',
+
+    ...sizeValues,
   },
   fontSizes: {
     xs: px(12),
@@ -133,6 +182,11 @@ export const vars = createGlobalTheme(':root', {
     '5xl': px(48),
     '6xl': px(60),
     '7xl': px(72),
+    '76px': px(76),
+    '80px': px(80),
+    '84px': px(84),
+    '88px': px(88),
+    '92px': px(92),
     '8xl': px(96),
     '9xl': px(128),
     '10xl': px(144),

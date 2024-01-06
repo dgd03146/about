@@ -15,7 +15,7 @@ export const buttonStyle = recipe({
     //   tablet: 'xlarge',
     // },
     border: 'none',
-    borderRadius: 'large',
+    // borderRadius: 'large',
   }),
   variants: {
     variant: {

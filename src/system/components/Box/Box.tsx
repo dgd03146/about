@@ -82,6 +82,8 @@ export const Box: BoxComponent = forwardRef(
       textAlign,
       maxWidth,
       minWidth,
+      minHeight,
+      maxHeight,
       transition,
       overflow,
       gridTemplateColumns,
