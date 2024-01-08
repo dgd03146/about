@@ -15,9 +15,12 @@ type Props = {
 }
 
 const breakPoints = {
-  default: 3,
-  1100: 2,
-  700: 1,
+  default: 5,
+
+  1200: 4,
+  1080: 3,
+  768: 2,
+  480: 1,
 }
 
 const BlogPosts = ({ posts }: Props) => {
@@ -28,9 +31,10 @@ const BlogPosts = ({ posts }: Props) => {
         className={styles.masonryGrid}
         columnClassName={styles.masonryGridColumn}
       >
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <Post
             key={post.id}
+            index={index}
             // setSelected={setSelected}
             post={post}
           />

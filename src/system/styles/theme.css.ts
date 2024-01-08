@@ -75,6 +75,7 @@ export const tailwindPalette = {
   pink700: colors.fuchsia['700'],
   pink800: colors.fuchsia['800'],
   pink900: colors.fuchsia['900'],
+  inherit: 'inherit',
 }
 
 const sizeValues = {
@@ -119,6 +120,7 @@ const sizeValues = {
 export const vars = createGlobalTheme(':root', {
   font: {
     // kor: `var(--font-noto-sans-kor)`,
+    pretendard: 'var(--font-pretendard)',
     inter: 'var(--font-inter)',
     hero: 'var(--font-rubik)',
     dm: 'var(--font-dm-sans)',

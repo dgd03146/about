@@ -97,6 +97,8 @@ export const responsiveProperties = defineProperties({
       fast: 'transform .15s ease, opacity .15s ease',
     },
     fontSize: vars.fontSizes,
+    background: vars.palette,
+    color: vars.palette,
   },
   shorthands: {
     padding: ['paddingTop', 'paddingBottom', 'paddingLeft', 'paddingRight'],
@@ -113,17 +115,17 @@ export const responsiveProperties = defineProperties({
 export const lightMode = 'light'
 export const darkMode = 'dark'
 
-const colorProperties = defineProperties({
-  // conditions: {
-  //   lightMode: {},
-  //   darkMode: { selector: `.${darkMode} &` },
-  // },
-  // defaultCondition: 'lightMode',
-  properties: {
-    background: vars.palette,
-    color: vars.palette,
-  },
-})
+// const colorProperties = defineProperties({
+//   // conditions: {
+//   //   lightMode: {},
+//   //   darkMode: { selector: `.${darkMode} &` },
+//   // },
+//   // defaultCondition: 'lightMode',
+//   properties: {
+//     background: vars.palette,
+//     color: vars.palette,
+//   },
+// })
 
 export const textProperties = defineProperties({
   properties: {
@@ -155,7 +157,6 @@ export const sprinkles = createSprinkles(
   textProperties,
   responsiveProperties,
   unresponsiveProperties,
-  colorProperties,
 )
 
 export type Sprinkles = Parameters<typeof sprinkles>[0]

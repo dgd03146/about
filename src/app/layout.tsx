@@ -7,6 +7,7 @@ import {
   Onest,
   Playfair_Display,
 } from 'next/font/google'
+import localFont from 'next/font/local'
 // // import localFont from 'next/font/local'
 // import { Navbar, Transition } from '@/components'
 
@@ -21,6 +22,12 @@ const noto = Noto_Sans_JP({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-noto-sans-jp',
+})
+
+const pretendard = localFont({
+  src: '../../public/fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard',
+  display: 'swap',
 })
 
 const inter = Inter({
@@ -70,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable} ${onest.variable} ${playfair.variable}`}
+      className={`${pretendard.variable} ${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable} ${onest.variable} ${playfair.variable}`}
     >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}

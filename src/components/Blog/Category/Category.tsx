@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Button, Container, Flex, Text } from '@/system/components'
+import { Button, Container, Flex, Text, Heading } from '@/system/components'
 import * as styles from './Category.css'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -13,10 +13,10 @@ type Props = {
 }
 
 const category = [
-  { title: 'All' },
-  { title: 'Uk' },
-  { title: 'Korea' },
-  { title: 'Travel' },
+  { title: 'ALL' },
+  { title: 'KOREA' },
+  { title: 'UK' },
+  { title: 'TRAVEL' },
 ]
 
 const Category = ({
@@ -37,7 +37,12 @@ const Category = ({
             transition={{ duration: 0.3, delay: index * 0.5 }}
           >
             <Button>
-              <Text key={index} className={styles.categoryName} text={title} />
+              <Heading
+                as="h2"
+                key={index}
+                className={styles.categoryName}
+                text={title}
+              />
             </Button>
           </motion.div>
         ))}

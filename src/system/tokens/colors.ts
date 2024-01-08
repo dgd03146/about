@@ -1,8 +1,8 @@
 export const customColors = {
   primary: '#FFC000', // GRYFFINDOR YELLOW
   // primary: '#F4C500',
-  // white: '#fff',
-  white: '#F6F4EB',
+  white: '#fff',
+  // white: '#F6F4EB',
   black: '#0e0e10',
   // red: '#7F0909', // GRYFFINDOR RED
   red: '#B80F0A',
