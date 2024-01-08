@@ -4,15 +4,14 @@ import { sprinkles } from '@/system'
 
 export const container = style([
   sprinkles({
-    paddingTop: {
-      miniTablet: '70px',
-    },
+    // paddingTop: {
+    //   miniTablet: '70px',
+    // },
   }),
   {
     // FIXME:
     // height: calc.subtract('100vh', '280px'),
-
-    minHeight: '600px',
+    // minHeight: '600px',
   },
 ])
 
@@ -20,7 +19,8 @@ export const blogSection = style([
   sprinkles({
     flexDirection: 'column',
     height: 'full',
-    justifyContent: 'center',
-    gapY: 'small',
+    // justifyContent: 'center',
+    // gapY: 'small',
+    // overflow: 'hidden',
   }),
 ])

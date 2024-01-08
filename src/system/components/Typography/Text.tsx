@@ -20,11 +20,11 @@ type TextComponent = <C extends ElementType = 'p'>(
 
 export const Text: TextComponent = forwardRef(
   <C extends React.ElementType = 'p'>(
-    { as, text, display, variant, children }: TextProps<C>,
+    { as, text, display, variant, children, ...restProps }: TextProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
-    const ComponentType: ElementType = as || 'p'
     const TextClass = TextStyle({ variant })
+    const ComponentType: ElementType = as || 'p'
     const textDisplay = display || 'block'
     return (
       <Box<typeof ComponentType, Props>
@@ -32,6 +32,7 @@ export const Text: TextComponent = forwardRef(
         display={textDisplay}
         ref={ref}
         className={TextClass}
+        {...restProps}
       >
         {text}
         {children}

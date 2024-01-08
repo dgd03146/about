@@ -1,7 +1,7 @@
-import { GrClose } from 'react-icons/gr'
+import { MdClose } from 'react-icons/md'
 
 const CloseIcon = () => {
-  return <GrClose />
+  return <MdClose />
 }
 
 export default CloseIcon

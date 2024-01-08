@@ -1,17 +1,30 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Container, Heading, Flex } from '@/system/components'
+import { Button, Container, Flex, Text } from '@/system/components'
 import * as styles from './Category.css'
+import { Dispatch, SetStateAction } from 'react'
+
+type Props = {
+  filtered: boolean
+  setFiltered: Dispatch<SetStateAction<boolean>>
+  activeCategory: number
+  setActiveCategory: Dispatch<SetStateAction<number>>
+}
 
 const category = [
-  { title: 'ALL' },
-  { title: 'UK' },
-  { title: 'KOREA' },
-  { title: 'TRAVEL' },
+  { title: 'All' },
+  { title: 'Uk' },
+  { title: 'Korea' },
+  { title: 'Travel' },
 ]
 
-const Category = () => {
+const Category = ({
+  filtered,
+  setFiltered,
+  activeCategory,
+  setActiveCategory,
+}: Props) => {
   return (
     <Container className={styles.container}>
       <Flex className={styles.categoryContainer}>
@@ -23,9 +36,9 @@ const Category = () => {
             animate={{ opacity: 1, translateX: 0, translateY: 0 }}
             transition={{ duration: 0.3, delay: index * 0.5 }}
           >
-            <Heading key={index} as="h1" className={styles.categoryName}>
-              {title}
-            </Heading>
+            <Button>
+              <Text key={index} className={styles.categoryName} text={title} />
+            </Button>
           </motion.div>
         ))}
       </Flex>

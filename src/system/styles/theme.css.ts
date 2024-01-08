@@ -119,7 +119,7 @@ const sizeValues = {
 export const vars = createGlobalTheme(':root', {
   font: {
     // kor: `var(--font-noto-sans-kor)`,
-    en: 'var(--font-inter)',
+    inter: 'var(--font-inter)',
     hero: 'var(--font-rubik)',
     dm: 'var(--font-dm-sans)',
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',

@@ -1,7 +1,7 @@
-import { GrMenu } from 'react-icons/gr'
+import { MdMenu } from 'react-icons/md'
 
 const HamburgerIcon = () => {
-  return <GrMenu />
+  return <MdMenu />
 }
 
 export default HamburgerIcon

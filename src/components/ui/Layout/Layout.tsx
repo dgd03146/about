@@ -7,7 +7,7 @@ import { Navbar } from '@/components'
 import { Container, Grid } from '@/system/components'
 
 import { getColorForPath } from '@/utils/getColorForPath'
-import * as S from './layout.css'
+import * as S from './Layout.css'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname()

@@ -76,14 +76,21 @@ export const BlogList = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('resize', updateWidth)
+    function handleResize() {
+      // 현재 창 너비가 600px보다 크면 updateWidth 함수를 호출
+      if (window.innerWidth > 600) {
+        updateWidth()
+      }
+    }
 
-    // 초기 설정
-    updateWidth()
+    window.addEventListener('resize', handleResize)
 
-    // cleanup function
+    // 컴포넌트 마운트 시 초기 설정
+    handleResize()
+
+    // 컴포넌트 언마운트 시 이벤트 리스너 제거
     return () => {
-      window.removeEventListener('resize', updateWidth)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
