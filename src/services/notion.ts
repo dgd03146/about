@@ -66,8 +66,6 @@ export const convertPageProperties = (page: PageObjectResponse) => {
     res[key] = convertProperty(propertyValue)
   })
 
-  console.log('🚀 ~ file: notion.ts:69 ~ convertPageProperties ~ res:', res)
-
   const coverImage = pageToImageUrl(page)
   const { title, tags, date, description, categories, coverImageHeight } = res
 
@@ -106,6 +104,8 @@ export const getPosts = cache(async () => {
     const page = pageData as PageObjectResponse
     return convertPageProperties(page)
   })
+
+  console.log(pages, 'pages')
 
   return pages
 })

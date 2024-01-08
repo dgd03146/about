@@ -1,1 +1,1 @@
-export type { PostInfo, Tag } from './notion'
+export type { PostInfo } from './notion'

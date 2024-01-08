@@ -36,8 +36,8 @@
 type PropertyValue =
   | string
   | string[]
-  | Tag
-  | Tag[]
+  // | Tag
+  // | Tag[]
   | number
   | null
   | undefined
@@ -47,9 +47,9 @@ export type PostInfo = {
   [key: string]: PropertyValue
   id: string
   title?: string
-  categories?: Tag[]
+  categories?: string[]
   date?: string
-  tags?: Tag[]
+  tags?: string[]
   description?: string
   coverImage: string
   coverImageHeight?: number
@@ -57,8 +57,8 @@ export type PostInfo = {
   last_edited_time: string
 }
 
-export type Tag = {
-  color?: string
-  id: string
-  name: string
-}
+// export type Tag = {
+//   color?: string
+//   id: string
+//   name: string
+// }

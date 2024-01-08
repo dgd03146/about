@@ -6,11 +6,7 @@ import { getPostDetail, getPosts } from '@/services/notion'
 const BlogPage = async () => {
   const posts = await getPosts()
 
-  return (
-    <Blog>
-      <BlogPosts posts={posts} />
-    </Blog>
-  )
+  return <Blog posts={posts} />
 }
 
 export default BlogPage

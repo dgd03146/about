@@ -1,18 +1,24 @@
 'use client'
 
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useState, useEffect } from 'react'
 import { Container, Flex } from '@/system/components'
 import * as styles from './Blog.css'
 // import BlogPosts from './BlogPosts/BlogPosts'
 import Category from './Category/Category'
-import ImageModal from './ImageModal'
+import { PostInfo } from '@/types'
+import BlogPosts from './BlogPosts/BlogPosts'
+import { getFiltered } from '@/utils/getFilteredPosts'
 
-type Props = {} & PropsWithChildren
+type Props = { posts: PostInfo[] }
 
-export const Blog = ({ children }: Props) => {
-  const [selected, setSelected] = useState(null)
-  const [filtered, setFiltered] = useState()
+export const Blog = ({ posts }: Props) => {
+  const [filtered, setFiltered] = useState('ALL')
   const [activeCategory, setActiveCategory] = useState(0)
+  const [filteredPosts, setFilteredPosts] = useState(posts)
+
+  useEffect(() => {
+    setFilteredPosts(getFiltered(posts, filtered))
+  }, [filtered])
 
   return (
     <Container className={styles.container}>
@@ -23,8 +29,7 @@ export const Blog = ({ children }: Props) => {
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
         />
-        {children}
-        <ImageModal selected={selected} setSelected={setSelected} />
+        <BlogPosts posts={filteredPosts} />
       </Flex>
     </Container>
   )

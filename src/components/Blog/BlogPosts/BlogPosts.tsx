@@ -8,6 +8,7 @@ import Masonry from 'react-masonry-css'
 import { Box } from '@/system/components'
 import Post from '../Post'
 import * as styles from './BlogPost.css'
+import { useState } from 'react'
 
 type Props = {
   setSelected: Dispatch<SetStateAction<null>>

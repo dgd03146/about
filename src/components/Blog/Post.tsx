@@ -71,7 +71,7 @@ const Post = ({ post, index }: Props) => {
                   width={80}
                   height={100}
                 />
-                <Heading as="h4" text="15. July 2023" />
+                <Text text={date} />
               </Flex>
               <Stack gapY="large">
                 <Heading as="h4" text={title} fontWeight="bold" />
