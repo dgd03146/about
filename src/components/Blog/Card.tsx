@@ -1,14 +1,13 @@
-import { Dispatch, SetStateAction } from 'react'
-import { Box } from '@/system/components'
-import Image from 'next/image'
+// import { Dispatch, SetStateAction } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 type Props = {
   item: any
-  setSelected: Dispatch<SetStateAction<null>>
+  // setSelected: Dispatch<SetStateAction<null>>
 }
 
-const Card = ({ setSelected, item }: Props) => {
+const Card = ({ item }: Props) => {
   return (
     <motion.div
       whileHover={{
