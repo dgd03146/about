@@ -31,7 +31,7 @@ export const HamburgerStyle = style([
 export const RoutesStyle = style([
   sprinkles({
     display: 'flex',
-    height: 'full',
+    // height: 'full',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: {
@@ -41,7 +41,7 @@ export const RoutesStyle = style([
   }),
 
   {
-    height: calc.subtract('100vh', '140px'),
+    height: calc.subtract('100vh', '280px'),
   },
 ])
 

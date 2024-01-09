@@ -19,8 +19,8 @@ export const NavLink = ({ title, href, toggle }: Props) => {
   const titleArray = ensureArray(title)
 
   const handleRoute = () => {
-    router.push(href)
     toggle()
+    router.push(href)
   }
 
   return (

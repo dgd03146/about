@@ -7,42 +7,45 @@ import CloseIcon from '../icons/CloseIcon'
 import * as S from './Drawer.css'
 
 type Props = {
+  isOpen: boolean
   toggle: () => void
 }
 
-export const Drawer = ({ toggle }: Props) => {
+export const Drawer = ({ isOpen, toggle }: Props) => {
   return (
     <AnimatePresence>
-      <motion.div
-        variants={S.menuVars}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className={S.DrawerStyle}
-      >
-        <Flex
-          className={NavbarStyle}
-          alignItems="center"
-          justifyContent="flex-end"
-        >
-          <Button variant="basic" onClick={toggle}>
-            <Heading as="h1">
-              <CloseIcon />
-            </Heading>
-          </Button>
-        </Flex>
+      {isOpen && (
         <motion.div
-          className={S.RoutesStyle}
-          variants={S.containerVars}
+          variants={S.menuVars}
           initial="initial"
-          animate="open"
-          exit="initial"
+          animate="animate"
+          exit="exit"
+          className={S.DrawerStyle}
         >
-          {ROUTES.map(({ title, href }, index) => (
-            <NavLink key={index} title={title} href={href} toggle={toggle} />
-          ))}
+          <Flex
+            className={NavbarStyle}
+            alignItems="center"
+            justifyContent="flex-end"
+          >
+            <Button variant="basic" onClick={toggle}>
+              <Heading as="h1">
+                <CloseIcon />
+              </Heading>
+            </Button>
+          </Flex>
+          <motion.div
+            className={S.RoutesStyle}
+            variants={S.containerVars}
+            initial="initial"
+            animate="open"
+            // exit="initial"
+          >
+            {ROUTES.map(({ title, href }, index) => (
+              <NavLink key={index} title={title} href={href} toggle={toggle} />
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   )
 }

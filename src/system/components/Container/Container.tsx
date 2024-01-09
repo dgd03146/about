@@ -6,6 +6,7 @@ import { Box, BoxProps } from '../Box/Box'
 type Props = {
   centerContent?: boolean
   maxWidth?: keyof typeof vars.contentWidth
+  width?: keyof typeof vars.contentWidth
 }
 
 type ContainerProps<C extends React.ElementType> = BoxProps<C, Props>
@@ -16,7 +17,7 @@ type ContainerComponent = <C extends React.ElementType = 'div'>(
 
 export const Container: ContainerComponent = forwardRef(
   <C extends React.ElementType = 'div'>(
-    { as, centerContent, maxWidth, ...restProps }: ContainerProps<C>,
+    { as, centerContent, maxWidth, width, ...restProps }: ContainerProps<C>,
     ref?: PolymorphicRef<C>,
   ) => {
     const display = centerContent ? 'flex' : 'block'
@@ -28,8 +29,9 @@ export const Container: ContainerComponent = forwardRef(
     return (
       <Box<typeof ElementType, Props>
         as={as}
-        marginLeft="auto"
-        marginRight="auto"
+        width={width || 'full'}
+        // marginLeft="auto"
+        // marginRight="auto"
         maxWidth={maxWidth || 'full'}
         display={display}
         alignItems={alignItems}

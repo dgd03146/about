@@ -1,13 +1,18 @@
 'use client'
 
 import { Container, Flex } from '@/system/components'
+import { AnimatedText } from '../ui'
 import * as S from './Home.css'
-import { AnimatedText } from './ui'
 
 export const Home = () => {
   return (
     <Container as="section" className={S.ContainerStyle}>
-      <Flex flexDirection="column" width="full">
+      <Flex
+        flexDirection="column"
+        width="full"
+        height="full"
+        justifyContent="center"
+      >
         <AnimatedText
           title="GEOJUNG IM"
           text={[
