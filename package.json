@@ -19,9 +19,6 @@
   },
   "dependencies": {
     "@capsizecss/vanilla-extract": "^1.0.0",
-    "@notion-render/bookmark-plugin": "^0.0.2",
-    "@notion-render/client": "^0.0.2",
-    "@notion-render/hljs-plugin": "^0.0.2",
     "@notionhq/client": "^2.2.14",
     "@types/node": "20.4.8",
     "@types/react": "18.2.19",
