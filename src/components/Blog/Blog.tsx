@@ -7,17 +7,27 @@ import * as styles from './Blog.css'
 import Category from './Category/Category'
 import { PostInfo } from '@/types'
 import BlogPosts from './BlogPosts/BlogPosts'
-import { getFiltered } from '@/utils/getFilteredPosts'
+import { getFilterPost } from '@/utils/getFilteredPosts'
+import { useParams, useSearchParams } from 'next/navigation'
 
 type Props = { posts: PostInfo[] }
 
 export const Blog = ({ posts }: Props) => {
-  const [filtered, setFiltered] = useState('ALL')
   const [activeCategory, setActiveCategory] = useState(0)
+
+  const [filtered, setFiltered] = useState('ALL')
+
   const [filteredPosts, setFilteredPosts] = useState(posts)
 
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category')
+
   useEffect(() => {
-    setFilteredPosts(getFiltered(posts, filtered))
+    setFiltered(category || 'ALL')
+  }, [category])
+
+  useEffect(() => {
+    setFilteredPosts(getFilterPost(posts, filtered))
   }, [filtered])
 
   return (

@@ -1,6 +1,9 @@
 import type { PostInfo } from '@/types'
 
-export const getFiltered = (posts: PostInfo[], filter: string): PostInfo[] => {
+export const getFilterPost = (
+  posts: PostInfo[],
+  filter: string,
+): PostInfo[] => {
   if (filter === 'ALL') {
     return posts
   }

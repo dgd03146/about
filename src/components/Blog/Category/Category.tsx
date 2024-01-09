@@ -4,7 +4,12 @@ import { motion } from 'framer-motion'
 import { Button, Container, Flex, Text, Heading } from '@/system/components'
 import * as styles from './Category.css'
 import { Dispatch, SetStateAction, useCallback } from 'react'
-import { useParams, usePathname, useRouter } from 'next/navigation'
+import {
+  useParams,
+  usePathname,
+  useRouter,
+  useSearchParams,
+} from 'next/navigation'
 
 type Props = {
   filtered: string
@@ -28,15 +33,28 @@ const Category = ({
 }: Props) => {
   const router = useRouter()
   const pathname = usePathname()
-  const params = useParams()
+  const searchParams = useSearchParams()
 
-  console.log(pathname, params)
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
 
   const handleFilter = useCallback(
     (title: string) => {
       setFiltered(title)
+      if (title === 'ALL') {
+        router.push('/blog')
+        return
+      }
+      router.push(`${pathname}?${createQueryString('category', title)}`)
     },
-    [filtered],
+    [pathname],
   )
 
   return (
