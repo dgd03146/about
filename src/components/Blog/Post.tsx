@@ -1,33 +1,31 @@
 import type { PostInfo } from '@/types'
-import React, { Dispatch, SetStateAction } from 'react'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Box, Heading, Stack, Flex, Text } from '@/system/components'
 import * as styles from './Post.css'
-import { imageWrapper } from './Post.css'
 
 type Props = {
-  // setSelected: Dispatch<SetStateAction<null>>
   post: PostInfo
   index: number
 }
 
-const cardBackground = [
-  'black',
-  'blue',
-  'green',
-  'red',
-  'orange',
-  'primary',
-] as const
+// const cardBackground = [
+//   'black',
+//   'blue',
+//   'green',
+//   'red',
+//   'orange',
+//   'primary',
+// ] as const
 
 const Post = ({ post, index }: Props) => {
   const { title, description, coverImage, coverImageHeight, date } = post
 
   return (
     <motion.div
+      layout
       className={styles.container}
       initial={{ opacity: 0, translateX: -50, translateY: -50 }}
       animate={{ opacity: 1, translateX: 0, translateY: 0 }}

@@ -1,45 +1,28 @@
 'use client'
 
-import { PropsWithChildren, useState, useEffect } from 'react'
 import { Container, Flex } from '@/system/components'
-import * as styles from './Blog.css'
-// import BlogPosts from './BlogPosts/BlogPosts'
-import Category from './Category/Category'
 import { PostInfo } from '@/types'
-import BlogPosts from './BlogPosts/BlogPosts'
-import { getFilterPost } from '@/utils/getFilteredPosts'
-import { useParams, useSearchParams } from 'next/navigation'
+import * as styles from './Blog.css'
+import { Category } from './Category'
+import { PostLists } from './PostLists'
+import { useFilteredPosts, useQueryParam } from './hooks'
 
 type Props = { posts: PostInfo[] }
 
+const param = 'category'
+
 export const Blog = ({ posts }: Props) => {
-  const [activeCategory, setActiveCategory] = useState(0)
-
-  const [filtered, setFiltered] = useState('ALL')
-
-  const [filteredPosts, setFilteredPosts] = useState(posts)
-
-  const searchParams = useSearchParams()
-  const category = searchParams.get('category')
-
-  useEffect(() => {
-    setFiltered(category || 'ALL')
-  }, [category])
-
-  useEffect(() => {
-    setFilteredPosts(getFilterPost(posts, filtered))
-  }, [filtered])
+  const { paramValue } = useQueryParam(param)
+  const { filteredPosts, filtered, setFiltered } = useFilteredPosts(
+    posts,
+    paramValue,
+  )
 
   return (
     <Container className={styles.container}>
       <Flex className={styles.blogSection}>
-        <Category
-          filtered={filtered}
-          setFiltered={setFiltered}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-        />
-        <BlogPosts posts={filteredPosts} />
+        <Category filtered={filtered} setFiltered={setFiltered} />
+        <PostLists posts={filteredPosts} />
       </Flex>
     </Container>
   )

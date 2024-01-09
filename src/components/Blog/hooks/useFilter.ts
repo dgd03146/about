@@ -1,21 +1,23 @@
 import type { PostInfo } from '@/types'
-import { useCallback, useEffect, useState } from 'react'
-import { getFilterPost } from '@/utils/getFilteredPosts'
+import { useEffect, useState } from 'react'
+import { getFilterPost } from '@/services/getFilteredPosts'
+
+const initialFilter = 'ALL'
 
 export const useFilteredPosts = (
-  initialPosts: PostInfo[],
-  initialFilter = 'ALL',
+  posts: PostInfo[],
+  filter: string | null = initialFilter,
 ) => {
-  const [filtered, setFiltered] = useState(initialFilter)
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts)
-
-  const handleFilterChange = useCallback((newFilter: string) => {
-    setFiltered(newFilter)
-  }, [])
+  const [filtered, setFiltered] = useState(filter || initialFilter)
+  const [filteredPosts, setFilteredPosts] = useState(posts)
 
   useEffect(() => {
-    setFilteredPosts(getFilterPost(initialPosts, filtered))
-  }, [filtered, initialPosts])
+    setFiltered(filter || initialFilter)
+  }, [filter])
 
-  return { filtered, filteredPosts, handleFilterChange }
+  useEffect(() => {
+    setFilteredPosts(getFilterPost(posts, filtered))
+  }, [filtered, posts])
+
+  return { filtered, setFiltered, filteredPosts }
 }

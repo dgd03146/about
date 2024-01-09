@@ -37,6 +37,8 @@ export const responsiveProperties = defineProperties({
     laptop: { '@media': `screen and (min-width: ${breakpoints.laptop})` },
     desktop: { '@media': `screen and (min-width: ${breakpoints.desktop})` },
     tv: { '@media': `screen and (min-width: ${breakpoints.tv})` },
+    hover: { selector: '&:hover' },
+    focus: { selector: '&:focus' },
   },
   defaultCondition: 'mobile',
   responsiveArray: ['mobile', 'tablet', 'laptop', 'desktop', 'tv'],

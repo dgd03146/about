@@ -7,6 +7,8 @@ import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import { getNotionDatabaseId, getNotionToken } from '@/envs'
 import { formatDate } from '../utils/formatDate'
 
+// FIXME: 분리
+
 type PageProperties = PageObjectResponse['properties']
 type PropertyKey = keyof PageProperties
 type PropertyValue = PageProperties[PropertyKey]
@@ -104,8 +106,6 @@ export const getPosts = cache(async () => {
     const page = pageData as PageObjectResponse
     return convertPageProperties(page)
   })
-
-  console.log(pages, 'pages')
 
   return pages
 })

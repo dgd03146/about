@@ -1,5 +1,8 @@
-import { style } from '@vanilla-extract/css'
+import { createVar, style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
+import { vars } from '@/system/styles/theme.css'
+
+export const textColor = createVar()
 
 export const container = style([
   sprinkles({
@@ -22,15 +25,15 @@ export const categoryContainer = style([
 export const categoryName = style([
   sprinkles({
     margin: 'none',
-    background: {
-      mobile: 'black',
-      tablet: 'inherit',
-    },
+    // background: {
+    //   mobile: 'black',
+    //   tablet: 'inherit',
+    // },
 
-    color: {
-      mobile: 'white',
-      tablet: 'inherit',
-    },
+    // color: {
+    //   mobile: 'white',
+    //   tablet: 'inherit',
+    // },
 
     fontFamily: 'hero',
 
@@ -38,24 +41,31 @@ export const categoryName = style([
       desktop: '8xl',
       laptop: '7xl',
       tablet: '5xl',
+      mobile: '2xl',
     },
 
-    paddingX: {
-      mobile: '1',
-      tablet: '0',
-    },
-    paddingY: {
-      mobile: '0.5',
-      tablet: '0',
-    },
+    // paddingX: {
+    //   mobile: '1',
+    //   tablet: '0',
+    // },
+    // paddingY: {
+    //   mobile: '0.5',
+    //   tablet: '0',
+    // },
 
+    // 버튼 스타일
     // background: 'black',
     // color: 'white',
     // fontFamily: 'inter',
   }),
   {
-    // padding: '4px 12px',
-    // fontWeight: '500',
-    // borderRadius: '9999px',
+    color: textColor,
+    ':hover': {
+      color: vars.palette.red,
+    },
+    transition: 'ease-out 0.3s',
   },
+  // padding: '4px 12px',
+  // fontWeight: '500',
+  // borderRadius: '9999px',
 ])
