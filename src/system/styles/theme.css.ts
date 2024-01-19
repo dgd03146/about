@@ -127,7 +127,7 @@ export const vars = createGlobalTheme(':root', {
     brand: 'Shrikhand, "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif',
     body: '-apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif',
     code: 'ml, "Roboto Mono", Menlo, monospace',
-    onest: 'var(--font-onest)',
+
     playfair: 'var(--font-playfair)',
   },
   grid: px(grid),

@@ -4,7 +4,6 @@ import {
   Black_Ops_One,
   Noto_Sans_JP,
   DM_Sans,
-  Onest,
   Playfair_Display,
 } from 'next/font/google'
 import localFont from 'next/font/local'
@@ -50,13 +49,6 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
 })
 
-const onest = Onest({
-  display: 'swap',
-  weight: '400',
-  variable: '--font-onest',
-  subsets: ['latin'],
-})
-
 const playfair = Playfair_Display({
   display: 'swap',
   weight: '500',
@@ -77,7 +69,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pretendard.variable} ${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable} ${onest.variable} ${playfair.variable}`}
+      className={`${pretendard.variable} ${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable}  ${playfair.variable}`}
     >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}
