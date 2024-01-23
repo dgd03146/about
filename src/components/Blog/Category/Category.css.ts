@@ -1,6 +1,5 @@
 import { createVar, style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
-import { vars } from '@/system/styles/theme.css'
 
 export const textColor = createVar()
 
