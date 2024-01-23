@@ -121,6 +121,7 @@ export const vars = createGlobalTheme(':root', {
   font: {
     // kor: `var(--font-noto-sans-kor)`,
     pretendard: 'var(--font-pretendard)',
+    nanumMyeongjo: 'var(--font-nanumMyeongjo)',
     inter: 'var(--font-inter)',
     hero: 'var(--font-rubik)',
     dm: 'var(--font-dm-sans)',

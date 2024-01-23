@@ -11,7 +11,7 @@ export const ContainerStyle = style([
     display: 'flex',
     alignItems: 'center',
     width: 'full',
-    height: calc.subtract('100vh', '280px'),
+    height: calc.subtract('100vh', '180px'),
     minHeight: '500px',
   },
 ])

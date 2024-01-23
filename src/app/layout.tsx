@@ -5,6 +5,7 @@ import {
   Noto_Sans_JP,
   DM_Sans,
   Playfair_Display,
+  Nanum_Myeongjo,
 } from 'next/font/google'
 import localFont from 'next/font/local'
 // // import localFont from 'next/font/local'
@@ -27,6 +28,13 @@ const pretendard = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',
   variable: '--font-pretendard',
   display: 'swap',
+})
+
+const nanumMyeongjo = Nanum_Myeongjo({
+  display: 'swap',
+  weight: '400',
+  variable: '--font-nanumMyeongjo',
+  subsets: ['latin'],
 })
 
 const inter = Inter({
@@ -69,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pretendard.variable} ${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable}  ${playfair.variable}`}
+      className={`${pretendard.variable} ${inter.variable} ${rubik.variable} ${noto.variable} ${dmSans.variable}  ${playfair.variable} ${nanumMyeongjo.variable}`}
     >
       {/* <ThemeProviders> */}
       {/* <Toast /> */}

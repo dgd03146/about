@@ -16,7 +16,7 @@ export const Home = () => {
         <AnimatedText
           title="GEOJUNG IM"
           text={[
-            'JUST GO WITH THE FLOW!',
+            // 'JUST GO WITH THE FLOW!',
             'TRAVEL. FASHION. CODING.',
             'FOOD. PHOTOGRAPHY.',
           ]}

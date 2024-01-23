@@ -32,14 +32,15 @@ export const HeadingStyle = recipe({
   },
 })
 
-// FIXME: change later
+// FIXME: span, blockquote, p태그 별로 다 다르게 고치기
 export const TextStyle = recipe({
-  base: sprinkles({}),
+  base: sprinkles({
+    margin: 'none',
+  }),
   variants: {
     variant: {
       solid: sprinkles({
         background: 'yellow',
-        paddingY: 'xxxlarge',
         // background: { lightMode: 'yellow', darkMode: 'gray100' },
         // color: { lightMode: 'white', darkMode: 'gray900' },
       }),

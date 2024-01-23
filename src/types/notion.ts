@@ -46,6 +46,7 @@ type PropertyValue =
 export type PostInfo = {
   [key: string]: PropertyValue
   id: string
+  slug?: string
   title?: string
   categories?: string[]
   date?: string
@@ -56,6 +57,11 @@ export type PostInfo = {
   created_time: string
   last_edited_time: string
 }
+
+export type PostSummaryInfo = Pick<
+  PostInfo,
+  'title' | 'description' | 'tags' | 'categories' | 'date'
+>
 
 // export type Tag = {
 //   color?: string

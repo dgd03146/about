@@ -32,7 +32,6 @@ export const Category = ({ filtered, setFiltered }: Props) => {
         return
       }
       setFiltered(name)
-
       pushRouteWithQuery(param, name)
     },
     [pathname],
@@ -53,7 +52,7 @@ export const Category = ({ filtered, setFiltered }: Props) => {
             whileHover={{
               transform: [
                 'scale3D(1,1,1)',
-                'scale3D(1.1,.55,1)',
+                'scale3D(1.1,0.85,1)',
                 'scale3D(.75,1.25,1)',
                 'scale3D(1.25,.85,1)',
                 'scale3D(.9,1.05,1)',
@@ -74,7 +73,9 @@ export const Category = ({ filtered, setFiltered }: Props) => {
                 text={name}
                 style={assignInlineVars({
                   [styles.textColor]:
-                    name === filtered ? customColors.red : customColors.black,
+                    name === filtered
+                      ? customColors.primary
+                      : customColors.black,
                 })}
               />
             </Button>

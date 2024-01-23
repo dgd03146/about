@@ -60,9 +60,10 @@ export const categoryName = style([
   }),
   {
     color: textColor,
-    ':hover': {
-      color: vars.palette.red,
-    },
+    // FIXME: 보고 바꿀것
+    // ':hover': {
+    //   color: vars.palette.red,
+    // },
     transition: 'ease-out 0.3s',
   },
   // padding: '4px 12px',

@@ -7,11 +7,12 @@ export const imageHeight = createVar()
 export const container = style([
   sprinkles({
     fontFamily: 'pretendard',
+    background: 'white',
   }),
   {
     position: 'relative',
     marginBottom: '20px',
-    background: 'white',
+
     cursor: 'pointer',
     boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
 

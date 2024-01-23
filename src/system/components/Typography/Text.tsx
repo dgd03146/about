@@ -9,7 +9,7 @@ interface Props {
   children?: ReactNode
   variant?: 'solid' | 'transparent'
   display?: 'block' | 'inline' | 'inline-block' | 'flex' | 'grid'
-  as?: 'p' | 'span'
+  as?: 'p' | 'span' | 'blockquote'
 }
 
 export type TextProps<C extends ElementType = 'p'> = BoxProps<C, Props>

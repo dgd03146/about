@@ -3,7 +3,7 @@ import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Box, Heading, Stack, Flex, Text } from '@/system/components'
+import { Box, Stack, Flex, Text } from '@/system/components'
 import * as styles from './Post.css'
 
 type Props = {
@@ -11,17 +11,10 @@ type Props = {
   index: number
 }
 
-// const cardBackground = [
-//   'black',
-//   'blue',
-//   'green',
-//   'red',
-//   'orange',
-//   'primary',
-// ] as const
+// const cardBackground = ['primary', 'orange', 'red', 'green', 'blue'] as const
 
 const Post = ({ post, index }: Props) => {
-  const { title, description, coverImage, coverImageHeight, date } = post
+  const { slug, title, description, coverImage, coverImageHeight, date } = post
 
   return (
     <motion.div
@@ -34,11 +27,12 @@ const Post = ({ post, index }: Props) => {
         [styles.imageHeight]: `${coverImageHeight}px`,
       })}
     >
-      <Link href="/">
+      <Link href={`blog/${slug}`}>
         <Box
           className={styles.card}
           // background={cardBackground[index % cardBackground.length]}
-          background="black"
+          background="red"
+          fontFamily="pretendard"
         >
           <Box className={styles.front}>
             <Box className={styles.imageWrapper}>
@@ -51,13 +45,7 @@ const Post = ({ post, index }: Props) => {
               />
             </Box>
             <Box padding="medium" background="white">
-              <Heading
-                as="h4"
-                text={title}
-                fontFamily="pretendard"
-                fontWeight="bold"
-                color="black"
-              />
+              <Text text={title} fontWeight="bold" color="black" />
             </Box>
           </Box>
           <Box className={styles.back}>
@@ -72,7 +60,7 @@ const Post = ({ post, index }: Props) => {
                 <Text text={date} />
               </Flex>
               <Stack gapY="large">
-                <Heading as="h4" text={title} fontWeight="bold" />
+                <Text text={title} fontWeight="bold" />
                 <Text text={description} />
               </Stack>
             </Stack>

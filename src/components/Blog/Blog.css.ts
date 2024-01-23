@@ -8,11 +8,10 @@ export const container = style([
     //   miniTablet: '70px',
     // },
   }),
-  {
-    // FIXME:
-    // height: calc.subtract('100vh', '280px'),
-    // minHeight: '600px',
-  },
+
+  // FIXME:
+  // height: calc.subtract('100vh', '280px'),
+  // minHeight: '600px',
 ])
 
 export const blogSection = style([

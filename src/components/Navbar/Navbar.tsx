@@ -26,31 +26,38 @@ export const Navbar = () => {
   }
 
   return (
-    <Flex
-      as="header"
-      alignItems="center"
-      justifyContent="space-between"
-      className={NavbarStyle}
-      position="sticky"
-      top={0}
-      zIndex={40}
-    >
-      <Link href="/">
-        <Heading as="h1" text="JUNG" fontSize="2xl" className={lot.className} />
-      </Link>
-      <Flex gapX="medium" alignItems="center">
-        <Button>
-          <Heading as="h1" fontSize="2xl" padding="none">
-            <SearchIcon />
-          </Heading>
-        </Button>
-        <Button variant="basic" onClick={handleDrawer}>
-          <Heading as="h1" fontSize="2xl" padding="none">
-            <HamburgerIcon />
-          </Heading>
-        </Button>
+    <>
+      <Flex
+        as="header"
+        alignItems="center"
+        justifyContent="space-between"
+        className={NavbarStyle}
+        position="sticky"
+        top={0}
+        zIndex={40}
+      >
+        <Link href="/">
+          <Heading
+            as="h1"
+            text="JUNG"
+            fontSize="2xl"
+            className={lot.className}
+          />
+        </Link>
+        <Flex gapX="medium" alignItems="center">
+          <Button>
+            <Heading as="h1" fontSize="2xl" padding="none">
+              <SearchIcon />
+            </Heading>
+          </Button>
+          <Button variant="basic" onClick={handleDrawer}>
+            <Heading as="h1" fontSize="2xl" padding="none">
+              <HamburgerIcon />
+            </Heading>
+          </Button>
+        </Flex>
       </Flex>
       {isOpen && <Drawer isOpen={isOpen} toggle={handleDrawer} />}
-    </Flex>
+    </>
   )
 }
