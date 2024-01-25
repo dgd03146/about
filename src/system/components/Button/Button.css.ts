@@ -26,12 +26,12 @@ export const buttonStyle = recipe({
         margin: 'none',
       }),
       solid: sprinkles({
-        background: 'pink600',
+        background: 'purple',
         color: 'white',
       }),
       transparent: sprinkles({
-        color: 'gray100',
-        background: 'blue500',
+        color: 'gray',
+        background: 'blue',
       }),
       'black solid': sprinkles({
         background: 'black',

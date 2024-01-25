@@ -18,10 +18,8 @@ export const textColor = createVar()
 
 export const container = style({
   background: brandColor,
-
   display: 'flex',
   flexDirection: 'column',
-
   minHeight: '100vh',
 })
 

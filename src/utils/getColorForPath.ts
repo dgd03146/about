@@ -1,4 +1,4 @@
-import { customColors } from '@/system/tokens/colors'
+import { color } from '@/system/tokens/colors'
 
 export function getColorForPath(pathname: string) {
   const prefix = pathname.split('/')[1] // 패스에서 첫 번째 섹션을 추출
@@ -6,12 +6,12 @@ export function getColorForPath(pathname: string) {
   switch (prefix) {
     case 'blog':
       // return '#EFEBEA'
-      return customColors.white
+      return color.white
     case 'travel':
-      return customColors.orange
+      return color.orange
     case 'food':
-      return customColors.green
+      return color.green
     default:
-      return customColors.primary // 기본 색상
+      return color.primary // 기본 색상
   }
 }

@@ -1,4 +1,4 @@
-export const customColors = {
+export const color = {
   primary: '#FFC000', // GRYFFINDOR YELLOW
   // primary: '#F4C500',
   // white: '#fff',
@@ -12,4 +12,6 @@ export const customColors = {
   blue: '#0059b3',
   green: '#008000',
   purple: '#800080',
+  transparent: 'transparent',
+  inherit: 'inherit',
 }

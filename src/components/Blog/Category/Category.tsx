@@ -3,7 +3,7 @@ import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { motion } from 'framer-motion'
 import { defaultAnimations } from '@/components/ui/Animation/AnimatedText'
 import { Button, Container, Flex, Heading } from '@/system/components'
-import { customColors } from '@/system/tokens/colors'
+import { color } from '@/system/tokens/colors'
 import { extractBaseUrl } from '@/utils/extractBaseUrl'
 import { useQueryParam } from '../hooks'
 import * as styles from './Category.css'
@@ -73,9 +73,7 @@ export const Category = ({ filtered, setFiltered }: Props) => {
                 text={name}
                 style={assignInlineVars({
                   [styles.textColor]:
-                    name === filtered
-                      ? customColors.primary
-                      : customColors.black,
+                    name === filtered ? color.primary : color.black,
                 })}
               />
             </Button>
