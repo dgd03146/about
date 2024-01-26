@@ -4,11 +4,9 @@ import {
   createSprinkles,
   // ConditionalValue,
 } from '@vanilla-extract/sprinkles'
-
-import { breakpoints } from '../tokens/breakPoints'
+import { breakpoints, space } from '../tokens'
 import { vars } from './theme.css'
 
-const space = vars.spacing
 export type Space = keyof typeof space
 
 const negativeSpace = {
@@ -88,7 +86,7 @@ export const responsiveProperties = defineProperties({
     },
     'column-gap': space,
     'row-gap': space,
-    gridColumnGap: ['8px', '16px', '17px', '20px', '24px', '32px', '40px'],
+    gridColumnGap: space,
     width: vars.contentWidth,
     height: vars.contentWidth,
     minWidth: vars.contentWidth,
@@ -133,8 +131,7 @@ export const darkMode = 'dark'
 export const textProperties = defineProperties({
   properties: {
     fontWeight: vars.fontWeight,
-
-    fontFamily: vars.font,
+    fontFamily: vars.fontFamily,
   },
 })
 

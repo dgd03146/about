@@ -4,14 +4,11 @@ import { sprinkles } from '@/system'
 export const NavbarStyle = style([
   sprinkles({
     width: 'full',
-    maxWidth: 'w-11/12',
+    maxWidth: '11/12',
     margin: 'auto',
-
+    maxHeight: 'navbar',
+    height: 'navbar',
+    background: 'inherit',
     // marginX: 'large',
   }),
-  {
-    maxHeight: '90px',
-    height: '90px',
-    background: 'inherit',
-  },
 ])
