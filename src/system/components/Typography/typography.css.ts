@@ -40,12 +40,10 @@ export const TextStyle = recipe({
   variants: {
     variant: {
       solid: sprinkles({
-        background: 'yellow',
         // background: { lightMode: 'yellow', darkMode: 'gray100' },
         // color: { lightMode: 'white', darkMode: 'gray900' },
       }),
       transparent: sprinkles({
-        color: 'teal200',
         // color: { lightMode: 'coolGray900', darkMode: 'gray100' },
       }),
     },

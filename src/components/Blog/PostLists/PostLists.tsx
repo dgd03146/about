@@ -15,7 +15,7 @@ const breakPoints = {
   1200: 4,
   1080: 3,
   768: 2,
-  480: 1,
+  480: 2,
 }
 
 export const PostLists = ({ posts }: Props) => {

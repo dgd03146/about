@@ -18,10 +18,8 @@ export const textColor = createVar()
 
 export const container = style({
   background: brandColor,
-
   display: 'flex',
   flexDirection: 'column',
-
   minHeight: '100vh',
 })
 
@@ -30,7 +28,7 @@ export const ContainerStyle = style([sprinkles({}), {}])
 export const MainStyle = style([
   sprinkles({
     minHeight: 'full',
-    maxWidth: 'w-11/12',
+    maxWidth: '11/12',
     gridTemplateColumns: {
       desktop: '1/12',
       laptop: '1/8',
@@ -38,16 +36,16 @@ export const MainStyle = style([
       mobile: '1/6',
     },
     gridColumnGap: {
-      desktop: '24px',
-      laptop: '20px',
-      mobile: '16px',
+      desktop: '6',
+      laptop: '5',
+      mobile: '4',
     },
 
     width: {
-      mobile: 'small',
-      tablet: 'small',
-      laptop: 'large',
-      desktop: 'xlarge',
+      mobile: 'tablet',
+      tablet: 'tablet',
+      laptop: 'laptop',
+      desktop: 'desktop',
     },
   }),
 ])

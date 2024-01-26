@@ -12,7 +12,12 @@ export const container = style([
 export const categoryContainer = style([
   sprinkles({
     display: 'flex',
+    width: 'full',
 
+    justifyContent: {
+      mobile: 'flex-start',
+      laptop: 'space-between',
+    },
     gapX: {
       mobile: 'medium',
       tablet: 'xlarge',
