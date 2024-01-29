@@ -1,2 +1,7 @@
-export type { PostInfo } from './notion'
-export type { PostSummaryInfo } from './notion'
+export type { PostContent, PostSummary } from './blogPost'
+export type {
+  PageProperties,
+  PropertyKey,
+  PropertyValue,
+  PropertyType,
+} from './notion'

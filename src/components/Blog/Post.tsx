@@ -1,4 +1,4 @@
-import type { PostInfo } from '@/types'
+import type { PostContent } from '@/types'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -7,7 +7,7 @@ import { Box, Stack, Flex, Text } from '@/system/components'
 import * as styles from './Post.css'
 
 type Props = {
-  post: PostInfo
+  post: PostContent
   index: number
 }
 
@@ -37,7 +37,7 @@ const Post = ({ post, index }: Props) => {
           <Box className={styles.front}>
             <Box className={styles.imageWrapper}>
               <Image
-                src={coverImage}
+                src={coverImage || ''}
                 fill
                 alt={title || 'post image'}
                 className={styles.image}
@@ -52,7 +52,7 @@ const Post = ({ post, index }: Props) => {
             <Stack padding="medium" gapY="large">
               <Flex justifyContent="space-between">
                 <Image
-                  src={coverImage}
+                  src={coverImage || ''}
                   alt={title || 'post image'}
                   width={80}
                   height={100}

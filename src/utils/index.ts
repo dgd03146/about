@@ -1,3 +1,5 @@
-// util functions
 export { ensureArray } from './ensureArray'
 export { getPathName } from './getPathName'
+export { formatDate } from './formatDate'
+export { extractBaseUrl } from './extractBaseUrl'
+export { getColorForPath } from './getColorForPath'

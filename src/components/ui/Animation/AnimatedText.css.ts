@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
 
-export const TitleStyle = style([
+export const title = style([
   sprinkles({
     padding: 'none',
     margin: 'none',
@@ -14,7 +14,7 @@ export const TitleStyle = style([
   }),
 ])
 
-export const SubTitleStyle = style([
+export const subTitle = style([
   sprinkles({
     padding: 'none',
     margin: 'none',

@@ -19,7 +19,7 @@ export const useQueryParam = (param: string) => {
 
   const pushRouteWithQuery = (name: string, value: string) => {
     router.push(`${pathname}?${createQueryString(name, value)}`, {
-      scroll: 'false',
+      scroll: false,
     })
   }
 

@@ -2,10 +2,11 @@
 
 import { useRef } from 'react'
 import { Variant, motion } from 'framer-motion'
+import { TEXT_ANIMATION } from '@/constants'
 import { Heading } from '@/system/components'
 import { ensureArray } from '@/utils'
 import { AnimatedLine } from './AnimatedLine'
-import * as S from './AnimatedText.css'
+import * as styles from './AnimatedText.css'
 import { useInViewAnimation } from './hooks/useInviewAnimation'
 
 type AnimatedTextProps = {
@@ -19,26 +20,12 @@ type AnimatedTextProps = {
   }
 }
 
-export const defaultAnimations = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.1,
-    },
-  },
-}
-
 export const AnimatedText = ({
   title,
   text,
   once,
   repeatDelay,
-  animation = defaultAnimations,
+  animation = TEXT_ANIMATION,
 }: AnimatedTextProps) => {
   const textArray = ensureArray(text)
   const titleArray = ensureArray(title)
@@ -67,7 +54,7 @@ export const AnimatedText = ({
         }}
         transition={{ duration: 2, delay: 0 }}
       >
-        <Heading as="h1" className={S.TitleStyle}>
+        <Heading as="h1" className={styles.title}>
           {titleArray.map((line, lineIndex) => (
             <AnimatedLine
               key={`${line}-${lineIndex}`}
@@ -77,7 +64,7 @@ export const AnimatedText = ({
           ))}
         </Heading>
       </motion.div>
-      <Heading as="h1" className={S.SubTitleStyle}>
+      <Heading as="h1" className={styles.subTitle}>
         <motion.span
           ref={ref}
           initial="hidden"

@@ -1,15 +1,15 @@
-import Divider from '@/components/ui/Divider/Divider'
+import type { PostSummary } from '@/types'
+import { Divider } from '@/components'
 import { Box, Flex, Heading, Text } from '@/system/components'
-import { PostSummaryInfo } from '@/types'
 
 type Props = {
-  post: PostSummaryInfo
+  post: PostSummary
 }
 
-const PostSummary = ({ post }: Props) => {
+export const PostBrief = ({ post }: Props) => {
   return (
     <Flex flexDirection="column" fontFamily="nanumMyeongjo">
-      <Flex>
+      <Flex gapX="small">
         {post.categories?.map((it) => (
           <Text
             key={it}
@@ -34,5 +34,3 @@ const PostSummary = ({ post }: Props) => {
     </Flex>
   )
 }
-
-export default PostSummary

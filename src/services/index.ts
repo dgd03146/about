@@ -1,1 +1,1 @@
-//  intergrating with an api
+export { getPosts, getFilteredPosts, getPostPage } from './blog/post'

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import * as styles from './Markdown.css'
 
 type Props = {
   src: string
@@ -14,7 +13,6 @@ export const MarkdownImage = ({ src, alt, ...props }: Props) => (
     height={0}
     sizes="100vw"
     style={{ width: '100%', height: 'auto' }}
-    className={styles.image}
     {...props}
   />
 )

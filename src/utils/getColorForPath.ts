@@ -1,4 +1,4 @@
-import { color } from '@/system/tokens/color'
+import { color } from '@/system/tokens'
 
 export function getColorForPath(pathname: string) {
   const prefix = pathname.split('/')[1] // 패스에서 첫 번째 섹션을 추출
