@@ -8,11 +8,9 @@ import {
   Nanum_Myeongjo,
 } from 'next/font/google'
 import localFont from 'next/font/local'
-// // import localFont from 'next/font/local'
+
 // import { Navbar, Transition } from '@/components'
 
-// import { Grid, Container } from '@/system/components'
-// import * as S from '../components/ui/Layout/Layout.css'
 import { Layout } from '@/components/ui/Layout/Layout'
 
 // import ThemeProviders from './themeProviders'

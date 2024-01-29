@@ -1,13 +1,13 @@
 'use client'
 
 import { Container, Flex } from '@/system/components'
-import { PostInfo } from '@/types'
+import { PostContent } from '@/types'
 import * as styles from './Blog.css'
 import { Category } from './Category'
 import { PostLists } from './PostLists'
-import { useFilteredPosts, useQueryParam } from './hooks'
+import { useQueryParam, useFilteredPosts } from '.'
 
-type Props = { posts: PostInfo[] }
+type Props = { posts: PostContent[] }
 
 const param = 'category'
 
@@ -19,8 +19,8 @@ export const Blog = ({ posts }: Props) => {
   )
 
   return (
-    <Container className={styles.container}>
-      <Flex className={styles.blogSection}>
+    <Container>
+      <Flex as="section" className={styles.blogSection}>
         <Category filtered={filtered} setFiltered={setFiltered} />
         <PostLists posts={filteredPosts} />
       </Flex>

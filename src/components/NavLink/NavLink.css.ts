@@ -1,14 +1,14 @@
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
 
-export const NavLinkStyle = style([
+export const navLink = style([
   sprinkles({
     overflow: 'hidden',
     marginX: 'xxlarge',
   }),
 ])
 
-export const HeaderStyle = style([
+export const header = style([
   sprinkles({
     fontSize: {
       mobile: '4xl',
@@ -18,7 +18,7 @@ export const HeaderStyle = style([
   }),
 ])
 
-export const NavLinkVars = {
+export const navLinkVars = {
   initial: {
     y: '30vh',
     transition: {

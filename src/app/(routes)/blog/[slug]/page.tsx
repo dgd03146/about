@@ -1,17 +1,19 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import MarkdownBlockQuote from '@/components/Blog/Markdown/MarkdownBlockQuote'
+
 import {
+  MarkdownParagraph,
   MarkdownH1,
   MarkdownH2,
   MarkdownH3,
   MarkdownH4,
-} from '@/components/Blog/Markdown/MarkdownHeading'
-import { MarkdownImage } from '@/components/Blog/Markdown/MarkdownImage'
-import MarkdownParagraph from '@/components/Blog/Markdown/MarkdownParagraph'
-import PostDetail from '@/components/Blog/PostDetail/PostDetail'
-import PostSummary from '@/components/Blog/PostSummary/PostSummary'
-import { getPostPage } from '@/services/notion'
+  MarkdownBlockQuote,
+  MarkdownImage,
+  PostBrief,
+  PostDetail,
+} from '@/components/Blog'
+
+import { getPostPage } from '@/services'
 import { Box } from '@/system/components'
 
 type Params = {
@@ -25,7 +27,7 @@ const PostDetailPage = async ({ params: { slug } }: Params) => {
 
   return (
     <PostDetail>
-      <PostSummary post={page.post} />
+      <PostBrief post={page.post} />
       <Box paddingY="xxlarge">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}

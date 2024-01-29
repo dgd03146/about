@@ -1,5 +1,5 @@
-import { Blog } from '@/components/Blog/Blog'
-import { getPosts } from '@/services/notion'
+import { Blog } from '@/components/Blog'
+import { getPosts } from '@/services'
 
 const BlogPage = async () => {
   const posts = await getPosts()

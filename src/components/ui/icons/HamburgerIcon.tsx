@@ -1,7 +1,5 @@
 import { MdMenu } from 'react-icons/md'
 
-const HamburgerIcon = () => {
+export const HamburgerIcon = () => {
   return <MdMenu />
 }
-
-export default HamburgerIcon

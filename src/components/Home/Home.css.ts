@@ -15,5 +15,3 @@ export const ContainerStyle = style([
     minHeight: '500px',
   },
 ])
-
-export const HeroStyle = style([sprinkles({})])

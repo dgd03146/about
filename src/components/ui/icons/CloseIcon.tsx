@@ -1,7 +1,5 @@
 import { MdClose } from 'react-icons/md'
 
-const CloseIcon = () => {
+export const CloseIcon = () => {
   return <MdClose />
 }
-
-export default CloseIcon

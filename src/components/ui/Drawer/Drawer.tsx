@@ -1,9 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { NavbarStyle } from '@/components/Navbar/Navbar.css'
-import { ROUTES } from '@/constants/route'
+import { NavLink, NavbarStyle } from '@/components/Blog'
+import { ROUTES } from '@/constants'
 import { Button, Flex, Heading } from '@/system/components'
-import { NavLink } from '../../NavLink'
-import CloseIcon from '../icons/CloseIcon'
+import { CloseIcon } from '../icons'
 import * as S from './Drawer.css'
 
 type Props = {

@@ -1,15 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-
 import localFont from 'next/font/local'
 import Link from 'next/link'
-
 import { Drawer } from '@/components/ui'
 import { Button, Flex, Heading } from '@/system/components'
-
-import HamburgerIcon from '../ui/icons/HamburgerIcon'
-import SearchIcon from '../ui/icons/SearchIcon'
+import { HamburgerIcon, SearchIcon } from '../ui/icons'
 import { NavbarStyle } from './Navbar.css'
 
 const lot = localFont({
