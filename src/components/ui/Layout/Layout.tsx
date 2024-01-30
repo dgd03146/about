@@ -6,23 +6,23 @@ import { usePathname } from 'next/navigation'
 import { Navbar } from '@/components'
 import { Container, Grid } from '@/system/components'
 import { getColorForPath } from '@/utils'
-import * as S from './Layout.css'
+import * as styles from './Layout.css'
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname()
 
   return (
     <Container
-      className={S.container}
+      className={styles.container}
       style={assignInlineVars({
-        [S.brandColor]: getColorForPath(pathname),
+        [styles.brandColor]: getColorForPath(pathname),
       })}
     >
       {/* <Transition> */}
       <Navbar />
-      <Container centerContent className={S.ContainerStyle}>
-        <Grid as="main" className={S.MainStyle}>
-          <Grid as="section" className={S.SectionStyle}>
+      <Container centerContent>
+        <Grid as="main" className={styles.main}>
+          <Grid as="section" className={styles.section}>
             {children}
           </Grid>
         </Grid>

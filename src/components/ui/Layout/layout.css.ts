@@ -23,9 +23,7 @@ export const container = style({
   minHeight: '100vh',
 })
 
-export const ContainerStyle = style([sprinkles({}), {}])
-
-export const MainStyle = style([
+export const main = style([
   sprinkles({
     minHeight: 'full',
     maxWidth: '11/12',
@@ -50,7 +48,7 @@ export const MainStyle = style([
   }),
 ])
 
-export const SectionStyle = style([
+export const section = style([
   sprinkles({
     minHeight: 'full',
     gridColumn: {

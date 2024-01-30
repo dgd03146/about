@@ -1,3 +1,6 @@
-export { AnimatedLine, AnimatedText } from './Animation'
+export { AnimatedText } from './Animation/AnimatedText'
+export { AnimatedLine } from './Animation/AnimatedLine'
 
-export { Drawer } from './Drawer'
+export { Drawer } from './Drawer/Drawer'
+export { Divider } from './Divider/Divider'
+export { Layout } from './Layout/Layout'

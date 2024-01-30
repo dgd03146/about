@@ -1,11 +1,11 @@
 import { style } from '@vanilla-extract/css'
 import { sprinkles } from '@/system'
 
-export const NavbarStyle = style([
+export const navbar = style([
   sprinkles({
     width: 'full',
     maxWidth: '11/12',
-    margin: 'auto',
+    marginX: 'auto',
     maxHeight: 'navbar',
     height: 'navbar',
     background: 'inherit',

@@ -20,7 +20,7 @@ export const Blog = ({ posts }: Props) => {
 
   return (
     <Container>
-      <Flex as="section" className={styles.blogSection}>
+      <Flex as="section" className={styles.section}>
         <Category filtered={filtered} setFiltered={setFiltered} />
         <PostLists posts={filteredPosts} />
       </Flex>
