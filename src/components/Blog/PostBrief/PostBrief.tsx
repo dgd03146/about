@@ -1,5 +1,5 @@
 import type { PostSummary } from '@/types'
-import { Divider } from '@/components'
+import { Divider } from '@/components/ui'
 import { Box, Flex, Heading, Text } from '@/system/components'
 
 type Props = {

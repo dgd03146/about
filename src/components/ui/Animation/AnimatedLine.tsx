@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { motion, Variant } from 'framer-motion'
 import { Text } from '@/system/components'

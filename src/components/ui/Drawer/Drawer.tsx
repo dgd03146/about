@@ -1,5 +1,7 @@
+'use client'
+
 import { AnimatePresence, motion } from 'framer-motion'
-import { NavLink, NavbarStyle } from '@/components/Blog'
+import { NavLink, navbar } from '@/components/Blog'
 import { ROUTES } from '@/constants'
 import { Button, Flex, Heading } from '@/system/components'
 import { CloseIcon } from '../icons'
@@ -22,7 +24,7 @@ export const Drawer = ({ isOpen, toggle }: Props) => {
           className={S.DrawerStyle}
         >
           <Flex
-            className={NavbarStyle}
+            className={navbar}
             alignItems="center"
             justifyContent="flex-end"
           >

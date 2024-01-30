@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import localFont from 'next/font/local'
 import Link from 'next/link'
-import { Drawer } from '@/components/ui'
 import { Button, Flex, Heading } from '@/system/components'
+import { Drawer } from '../ui'
 import { HamburgerIcon, SearchIcon } from '../ui/icons'
-import { NavbarStyle } from './Navbar.css'
+import * as styles from './Navbar.css'
 
 const lot = localFont({
   src: '../../../public/fonts/Lot-Regular.woff2',
@@ -27,7 +27,7 @@ export const Navbar = () => {
         as="header"
         alignItems="center"
         justifyContent="space-between"
-        className={NavbarStyle}
+        className={styles.navbar}
         position="sticky"
         top={0}
         zIndex={40}

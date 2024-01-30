@@ -11,7 +11,7 @@ import localFont from 'next/font/local'
 
 // import { Navbar, Transition } from '@/components'
 
-import { Layout } from '@/components/ui/Layout/Layout'
+import { Layout } from '@/components/ui'
 
 // import ThemeProviders from './themeProviders'
 // import Toast from '@/components/common/toast'
