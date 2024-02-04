@@ -14,7 +14,7 @@ export const container = style([
     marginBottom: '20px',
 
     cursor: 'pointer',
-    boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
+    // boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',
 
     height: imageHeight,
   },
@@ -42,13 +42,15 @@ export const image = style([
 ])
 
 export const card = style([
+  sprinkles({
+    color: 'white',
+  }),
   {
     position: 'absolute',
     width: '100%',
     height: '100%',
     transformStyle: 'preserve-3d',
     transition: 'all 0.7s ease',
-    color: 'white',
     ':hover': {
       transform: 'rotateY(180deg)',
     },

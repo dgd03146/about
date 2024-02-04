@@ -11,7 +11,7 @@ type Props = {
   index: number
 }
 
-// const cardBackground = ['primary', 'orange', 'red', 'green', 'blue'] as const
+const cardBackground = ['primary', 'orange', 'indigo', 'green', 'red'] as const
 
 const Post = ({ post, index }: Props) => {
   const { slug, title, description, coverImage, coverImageHeight, date } = post
@@ -22,7 +22,7 @@ const Post = ({ post, index }: Props) => {
       className={styles.container}
       initial={{ opacity: 0, translateX: -50, translateY: -50 }}
       animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.5 }}
+      transition={{ duration: 0.3, delay: index * 0.3 }}
       style={assignInlineVars({
         [styles.imageHeight]: `${coverImageHeight}px`,
       })}
@@ -30,8 +30,8 @@ const Post = ({ post, index }: Props) => {
       <Link href={`blog/${slug}`}>
         <Box
           className={styles.card}
-          // background={cardBackground[index % cardBackground.length]}
-          background="red"
+          background={cardBackground[index % cardBackground.length]}
+          // background="red"
           fontFamily="pretendard"
         >
           <Box className={styles.front}>
@@ -44,9 +44,9 @@ const Post = ({ post, index }: Props) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </Box>
-            <Box padding="medium" background="white">
+            {/* <Box padding="medium" background="white">
               <Text text={title} fontWeight="bold" color="black" />
-            </Box>
+            </Box> */}
           </Box>
           <Box className={styles.back}>
             <Stack padding="medium" gapY="large">
