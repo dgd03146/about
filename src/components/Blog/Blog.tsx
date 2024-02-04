@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, Flex } from '@/system/components'
+import { Container, Flex, Heading } from '@/system/components'
 import { PostContent } from '@/types'
 import * as styles from './Blog.css'
 import { Category } from './Category'
@@ -10,6 +10,8 @@ import { useQueryParam, useFilteredPosts } from '.'
 type Props = { posts: PostContent[] }
 
 const param = 'category'
+
+const title = `MY STORY EXHIBITION`
 
 export const Blog = ({ posts }: Props) => {
   const { paramValue } = useQueryParam(param)
@@ -21,6 +23,15 @@ export const Blog = ({ posts }: Props) => {
   return (
     <Container>
       <Flex as="section" className={styles.section}>
+        <Heading
+          as="h1"
+          fontFamily="hero"
+          color="green"
+          text={title}
+          textAlign="center"
+          fontSize="8xl"
+          marginY="xlarge"
+        />
         <Category filtered={filtered} setFiltered={setFiltered} />
         <PostLists posts={filteredPosts} />
       </Flex>

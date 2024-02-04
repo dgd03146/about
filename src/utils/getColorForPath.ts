@@ -5,10 +5,9 @@ export function getColorForPath(pathname: string) {
 
   switch (prefix) {
     case 'blog':
-      // return '#EFEBEA'
       return color.white
     case 'travel':
-      return color.orange
+      return color.skyblue
     case 'food':
       return color.green
     default:

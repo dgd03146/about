@@ -52,7 +52,7 @@ export const Category = ({ filtered, setFiltered }: Props) => {
                 text={name}
                 style={assignInlineVars({
                   [styles.textColor]:
-                    name === filtered ? color.primary : color.black,
+                    name === filtered ? color.green : color.black,
                 })}
               />
             </Button>

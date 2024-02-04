@@ -2,7 +2,7 @@ import type { PostContent } from '@/types'
 
 import Masonry from 'react-masonry-css'
 import { Box } from '@/system/components'
-import Post from '../Post'
+import Post from '../Post/Post'
 import * as styles from './PostList.css'
 
 type Props = {
