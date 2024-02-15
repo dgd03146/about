@@ -7,7 +7,7 @@ export function getColorForPath(pathname: string) {
     case 'blog':
       return color.white
     case 'travel':
-      return color.skyblue
+      return color.white
     case 'food':
       return color.green
     default:

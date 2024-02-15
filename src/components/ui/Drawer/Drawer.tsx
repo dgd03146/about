@@ -28,6 +28,7 @@ export const Drawer = ({ isOpen, toggle }: Props) => {
             alignItems="center"
             justifyContent="flex-end"
           >
+            {/* FIXME: 닫기 버튼 공용 컴포넌트로 바꾸기 */}
             <Button variant="basic" onClick={toggle}>
               <Heading as="h1">
                 <CloseIcon />

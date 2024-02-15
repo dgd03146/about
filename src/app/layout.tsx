@@ -82,8 +82,8 @@ export default function RootLayout({
 
       <body>
         <Layout>{children}</Layout>
+        <div id="portal" />
       </body>
-
       {/* </ThemeProviders> */}
     </html>
   )

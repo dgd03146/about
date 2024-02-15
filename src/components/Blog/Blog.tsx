@@ -11,7 +11,7 @@ type Props = { posts: PostContent[] }
 
 const param = 'category'
 
-const title = `MY STORY EXHIBITION`
+const title = `STORY EXHIBITION`
 
 export const Blog = ({ posts }: Props) => {
   const { paramValue } = useQueryParam(param)

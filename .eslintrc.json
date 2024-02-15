@@ -28,6 +28,7 @@
     "plugin:prettier/recommended" // eslint의 포매팅을 prettier로 사용.
   ],
   "rules": {
+    "react/jsx-no-useless-fragment": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/naming-convention": 0,
     "no-undef": 0,

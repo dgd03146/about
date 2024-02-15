@@ -57,4 +57,32 @@ export const posts = [
     subtitle: 'subtitle subtitle subtitle subtitle subtitle subtitle',
     tag: 'korea',
   },
+  {
+    id: 9,
+    src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: '타이틀타이틀',
+    subtitle: 'subtitle subtitle subtitle subtitle subtitle subtitle',
+    tag: 'korea',
+  },
+  {
+    id: 10,
+    src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: '타이틀타이틀',
+    subtitle: 'subtitle subtitle subtitle subtitle subtitle subtitle',
+    tag: 'korea',
+  },
+  {
+    id: 11,
+    src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: '타이틀타이틀',
+    subtitle: 'subtitle subtitle subtitle subtitle subtitle subtitle',
+    tag: 'korea',
+  },
+  {
+    id: 12,
+    src: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: '타이틀타이틀',
+    subtitle: 'subtitle subtitle subtitle subtitle subtitle subtitle',
+    tag: 'korea',
+  },
 ]

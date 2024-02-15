@@ -21,21 +21,19 @@ export const container = style([
 ])
 
 export const imageWrapper = style([
-  sprinkles({}),
-  {
+  sprinkles({
     position: 'relative',
-  },
-  {
-    width: '100%',
-    height: '100%',
-  },
+    width: 'full',
+    height: 'full',
+  }),
 ])
 
 export const image = style([
-  sprinkles({}),
+  sprinkles({
+    width: 'full',
+    height: 'full',
+  }),
   {
-    width: '100%',
-    height: '100%',
     objectFit: 'cover',
     // borderRadius: '1rem',
   },
